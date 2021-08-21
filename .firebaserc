@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "car-sales-3dc8a": {
+      "hosting": {
+        "sales-angular": [
+          "car-sales-3dc8a"
+        ]
+      }
+    }
+  }
+}
