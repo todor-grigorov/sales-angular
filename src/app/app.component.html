@@ -1,1 +1,26 @@
-<app-home></app-home>
+<main>
+    <mat-toolbar class="main-toolbar">
+        <div class="main-toolbar__left-side">
+            <div class="logo">
+                <!-- <div class="left-logo-side"></div> -->
+                <span>AUTO DEALER</span>
+            </div>
+            <div class="auth">
+                <span class="signin">
+                    <a href="">Вход</a>
+                </span>
+                <span>|</span>
+                <span>
+                    <a href="/register">Регистрация</a>
+                </span>
+            </div>
+        </div>
+        <div class="main-toolbar__right-side">
+            <button mat-stroked-button class="edit-ad-toolbar-btn">Редакция на обява</button>
+            <button mat-raised-button class="add-ad-toolbar-btn">+ ДОБАВИ ОБЯВА</button>
+        </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+
+
+</main>

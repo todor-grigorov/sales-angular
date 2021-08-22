@@ -1,0 +1,79 @@
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.main-toolbar {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-toolbar__left-side {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: #125699;
+}
+
+/* .left-logo-side {
+    width: 5%;
+    height: 100%;
+    background-color: #125699;
+} */
+
+.auth {
+    color: #125699;
+    font-size: 0.9rem;
+    margin-left: 20px;
+}
+
+.auth span {
+    margin-right: 5px;
+}
+
+.auth span a {
+    text-decoration: none;
+}
+
+.auth span a:visited {
+    color: #125699;
+    text-decoration: none;
+}
+
+.signin {
+    font-weight: 700;
+}
+
+.main-toolbar__right-side {
+    display: flex;
+    align-items: center;
+}
+
+.edit-ad-toolbar-btn {
+    border: 1px solid #125699;
+    border-radius: 5px;
+    padding: 2px 20px;
+    font-size: 1rem;
+    color: #125699;
+    margin-right: 20px;
+    letter-spacing: 1px;
+}
+
+.add-ad-toolbar-btn {
+    background-color: #125699;
+    padding: 2px 20px;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
