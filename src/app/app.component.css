@@ -23,6 +23,7 @@ main {
     border-radius: 10px;
     padding: 5px 10px;
     color: #125699;
+    text-decoration: none;
 }
 
 /* .left-logo-side {
@@ -50,8 +51,9 @@ main {
     text-decoration: none;
 }
 
-.signin {
+.signin-signout {
     font-weight: 700;
+    cursor: pointer;
 }
 
 .main-toolbar__right-side {

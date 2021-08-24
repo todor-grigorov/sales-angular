@@ -53,7 +53,6 @@ export class RegisterComponent implements OnInit {
           this.password = '';
         });
     }
-
   }
 
   onDisplayNameChange = (event: any) => {

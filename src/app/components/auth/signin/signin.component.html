@@ -1,1 +1,30 @@
-<p>signin works!</p>
+<div class="reg-container">
+    <h1>Вход</h1>
+    <form class="reg-form" #login="ngForm" (ngSubmit)="submit(login)">
+        <mat-form-field class="reg-form-group" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                (keyup)="onEmailChange($event)" [value]='email' placeholder="Ex. pat@example.com" name="email" ngModel>
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <pre></pre>
+        <mat-form-field class="reg-form-group" appearance="fill">
+            <mat-label>Парола</mat-label>
+            <input type="password" matInput [formControl]="passwordFormControl" [errorStateMatcher]="matcher"
+                (keyup)="onPasswordChange($event)" [value]='password' placeholder="Парола" name="password" ngModel>
+            <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
+                Паролата трябва да бъде поне 6 символа!
+            </mat-error>
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+                Паролата е <strong>задължителна</strong>.
+            </mat-error>
+        </mat-form-field>
+        <pre></pre>
+        <button mat-raised-button class="btn btn-primary" type="submit">Регистрация</button>
+    </form>
+</div>

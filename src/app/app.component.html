@@ -1,17 +1,23 @@
 <main>
     <mat-toolbar class="main-toolbar">
         <div class="main-toolbar__left-side">
-            <div class="logo">
+            <a href="/" class="logo">
                 <!-- <div class="left-logo-side"></div> -->
                 <span>AUTO DEALER</span>
-            </div>
+            </a>
             <div class="auth">
-                <span class="signin">
-                    <a href="/signin">Вход</a>
+                <span class="signin-signout">
+                    <a *ngIf="!isLoggedIn" href="/signin">Вход</a>
+                    <a *ngIf="isLoggedIn" (click)="onSignOut()">Изход</a>
                 </span>
                 <span>|</span>
                 <span>
                     <a href="/register">Регистрация</a>
+                </span>
+
+                <span *ngIf="displayName">|</span>
+                <span *ngIf="displayName">
+                    <a href="/profile">{{displayName}}</a>
                 </span>
             </div>
         </div>
