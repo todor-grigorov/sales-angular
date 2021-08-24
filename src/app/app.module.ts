@@ -21,6 +21,8 @@ import { AuthService } from './components/auth/auth.service';
 import { environment } from 'src/environments/environment';
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { MatSelectModule } from '@angular/material/select';
+import { CreateComponent } from './components/create/create.component';
+import { SwiperModule } from 'swiper/angular';
 
 
 
@@ -30,7 +32,8 @@ import { MatSelectModule } from '@angular/material/select';
     HomeComponent,
     RegisterComponent,
     ContainerComponent,
-    SigninComponent
+    SigninComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,7 @@ import { MatSelectModule } from '@angular/material/select';
     AngularFireAuthModule,
     AngularFirestoreModule,
     MatSelectModule,
+    SwiperModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

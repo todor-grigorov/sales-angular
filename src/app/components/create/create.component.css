@@ -1,0 +1,26 @@
+.attributes {
+    margin-top: 5%;
+    padding: 35px;
+    border: 1px solid #125699;
+    border-top-width: 4px;
+}
+
+.selects {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.selects__column{
+    width: 48%;
+    max-width: 49%;
+}
+
+.selects__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mat-form-fields {
+    width: 48%;
+    max-width: 48%;
+}
