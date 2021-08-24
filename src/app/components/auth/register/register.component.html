@@ -3,14 +3,16 @@
     <form class="reg-form" #login="ngForm" (ngSubmit)="submit(login)">
         <mat-form-field class="reg-form-group" appearance="fill">
             <mat-label>Име</mat-label>
-            <input type="text" matInput [formControl]="firstNameFormControl" [errorStateMatcher]="matcher"
-                (keyup)="onFirstNameChange($event)" [value]='firstName' placeholder="Име" name="firstname" ngModel>
+            <input type="text" matInput [formControl]="displayNameFormControl" [errorStateMatcher]="matcher"
+                (keyup)="onDisplayNameChange($event)" [value]='displayName' placeholder="Име" name="displayName"
+                ngModel>
         </mat-form-field>
         <pre></pre>
         <mat-form-field class="reg-form-group" appearance="fill">
-            <mat-label>Фамилия</mat-label>
-            <input type="text" matInput [formControl]="lastNameFormControl" [errorStateMatcher]="matcher"
-                (keyup)="onLastNameChange($event)" [value]='lastName' placeholder="Фамилия" name="lastname" ngModel>
+            <mat-label>Снимка</mat-label>
+            <input type="text" matInput [formControl]="photoUrlFormControl" [errorStateMatcher]="matcher"
+                (keyup)="onPhotoUrlChange($event)" [value]='photoUrl' placeholder="Профилна снимка (URL)"
+                name="photoUrl" ngModel>
         </mat-form-field>
         <pre></pre>
         <mat-form-field class="reg-form-group" appearance="fill">

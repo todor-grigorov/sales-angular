@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,19 +11,19 @@ import { ErrorStateMatcher } from '@angular/material/core';
 })
 export class RegisterComponent implements OnInit {
 
-  firstName = '';
-  lastName = '';
+  displayName = '';
+  photoUrl = '';
   email = '';
   password = '';
 
-  constructor() {
+  constructor(public authService: AuthService, private router: Router) {
   }
 
   ngOnInit(): void {
   }
 
-  firstNameFormControl = new FormControl('');
-  lastNameFormControl = new FormControl('');
+  displayNameFormControl = new FormControl('');
+  photoUrlFormControl = new FormControl('');
 
   passwordFormControl = new FormControl('', [
     Validators.required,
@@ -36,23 +38,30 @@ export class RegisterComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
 
   submit = (login: any) => {
-    console.log(login);
+    // console.log(login);
     if (login.form.status === "VALID") {
-      console.log(this.firstName);
-      console.log(this.lastName);
-      console.log(this.email);
-      console.log(this.password);
+      // console.log(this.displayName);
+      // console.log(this.photoUrl);
+      // console.log(this.email);
+      // console.log(this.password);
+      this.authService.SignUp(this.email, this.password, this.displayName, this.photoUrl)
+        .then(res => this.router.navigate(['/signin']))
+        .catch(error => {
+          this.displayName = '';
+          this.photoUrl = '';
+          this.email = '';
+          this.password = '';
+        });
     }
 
   }
 
-  onFirstNameChange = (event: any) => {
-    console.log(event.target.value)
-    this.firstName = event.target.value;
+  onDisplayNameChange = (event: any) => {
+    this.displayName = event.target.value;
   }
 
-  onLastNameChange = (event: any) => {
-    this.lastName = event.target.value;
+  onPhotoUrlChange = (event: any) => {
+    this.photoUrl = event.target.value;
   }
 
   onEmailChange = (event: any) => {

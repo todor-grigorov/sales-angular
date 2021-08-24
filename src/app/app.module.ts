@@ -14,6 +14,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ContainerComponent } from './components/container/container.component';
 import { MatInputModule } from '@angular/material/input';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AuthService } from './components/auth/auth.service';
+import { environment } from 'src/environments/environment';
+import { SigninComponent } from './components/auth/signin/signin.component';
+
 
 
 @NgModule({
@@ -21,7 +28,8 @@ import { MatInputModule } from '@angular/material/input';
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    ContainerComponent
+    ContainerComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -35,8 +43,11 @@ import { MatInputModule } from '@angular/material/input';
     AppRoutingModule,
     MatInputModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

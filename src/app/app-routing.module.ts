@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { SigninComponent } from './components/auth/signin/signin.component';
 import { ContainerComponent } from './components/container/container.component';
+import { AuthGuard } from "./shared/guard/auth.guard";
 // import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
@@ -17,6 +19,10 @@ const routes: Routes = [
     {
         path: 'register',
         component: RegisterComponent
+    },
+    {
+        path: 'signin',
+        component: SigninComponent
     },
     // {
     //     path: '**',
