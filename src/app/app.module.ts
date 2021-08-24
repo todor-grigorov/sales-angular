@@ -20,6 +20,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthService } from './components/auth/auth.service';
 import { environment } from 'src/environments/environment';
 import { SigninComponent } from './components/auth/signin/signin.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -46,6 +47,7 @@ import { SigninComponent } from './components/auth/signin/signin.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    MatSelectModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
