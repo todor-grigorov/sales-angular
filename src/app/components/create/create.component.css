@@ -1,4 +1,4 @@
-.attributes {
+.attributes-container {
     margin-top: 5%;
     padding: 35px;
     border: 1px solid #125699;
@@ -34,4 +34,18 @@
     background-color: #125699;
     color: #fff;
     font-size: 1.1rem;
+}
+
+.upload-image-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.attach {
+    margin-bottom: 30px;
+    width: 50%;
+}
+
+#upload-file {
+    display: none;
 }

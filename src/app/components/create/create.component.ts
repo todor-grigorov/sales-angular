@@ -1,5 +1,5 @@
 import { formatCurrency } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { allModels } from 'src/app/shared/models/allModels';
 import { CrudService } from '../crud.service';
@@ -39,9 +39,12 @@ export interface CarAttributes {
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  styleUrls: ['./create.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CreateComponent implements OnInit {
+
+  @ViewChild('uploadFile') uploadFile!: ElementRef<HTMLInputElement>;
 
   models = Array<string>();
   brandFormControl = new FormControl('');
@@ -49,6 +52,8 @@ export class CreateComponent implements OnInit {
   exterior: FormGroup;
   comfort: FormGroup;
   other: FormGroup;
+  images = Array<string>();
+  route: string = "";
 
   constructor(fb: FormBuilder, private crudService: CrudService, private router: Router) {
     this.safety = fb.group({
@@ -71,22 +76,42 @@ export class CreateComponent implements OnInit {
       disabledPeople: false,
       centralLock: false
     });
+
+    router.events.subscribe(val => {
+      console.log(val);
+      console.log(location.pathname)
+      // if (location.pathname != "") {
+      //   this.route = location.pathname;
+      // } else {
+      //   this.route = "Home";
+      // }
+    })
   }
 
   submit(create: any) {
-    // console.log(create);
-    // console.log(this.safety);
-    // console.log(this.exterior);
-    // console.log(this.comfort);
-    // console.log(this.other);
     const carAttributes: CarAttributes = { ...create.form.value, ...this.safety.value, ...this.exterior.value, ...this.comfort.value, ...this.other.value };
-    // console.log(carAttributes);
+    carAttributes.images = this.images;
     this.crudService.createAdd(carAttributes)
       .then(isSuccess => {
         if (isSuccess) {
           this.router.navigate(['/']);
         }
       })
+  }
+
+  handlePhotoClick() {
+    this.uploadFile.nativeElement.accept = ".png, .bmp, .jpg, .jpeg, .gif";
+    this.uploadFile.nativeElement.click();
+    this.uploadFile.nativeElement.addEventListener("change", this.uploadImages.bind(this))
+  }
+
+  uploadImages(event: any) {
+    if (event.target.files.length) {
+      this.crudService.uploadFileAndGetMetadata(event.target.files[0])
+        .then((url: any) => {
+          this.images = [...this.images, url];
+        })
+    }
   }
 
   onBrandSelection(event: any) {
@@ -97,21 +122,7 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // const swiper = new Swiper(".mySwiper", {
-  //   spaceBetween: 10,
-  //   slidesPerView: 4,
-  //   freeMode: true,
-  //   watchSlidesVisibility: true,
-  //   watchSlidesProgress: true,
-  // });
-  // const swiper2 = new Swiper(".mySwiper2", {
-  //   spaceBetween: 10,
-  //   navigation: {
-  //     nextEl: ".swiper-button-next",
-  //     prevEl: ".swiper-button-prev",
-  //   },
-  //   thumbs: {
-  //     swiper: swiper,
-  //   },
-  // });
+  ngOnDestroy() {
+    console.log("Create Destroy");
+  }
 }

@@ -26,6 +26,8 @@ import { SwiperModule } from 'swiper/angular';
 import { SearchComponent } from './components/search/search.component';
 import { EditComponent } from './components/edit/edit.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 
 
@@ -38,7 +40,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     SigninComponent,
     CreateComponent,
     SearchComponent,
-    EditComponent
+    EditComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatSelectModule,
     SwiperModule,
     MatCheckboxModule,
+    NgxGalleryModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
