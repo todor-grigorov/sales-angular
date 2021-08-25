@@ -1,11 +1,36 @@
+import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { allModels } from 'src/app/shared/models/allModels';
 import SwiperCore, {
   Navigation,
   Pagination,
   Scrollbar,
   A11y,
 } from 'swiper/core';
+
+export interface CarAttributes {
+  brand: string;
+  model: string;
+  price: number;
+  buildYear: number;
+  engineType: string;
+  gearType: string;
+  phoneNumber: string;
+  address: string;
+  airbags: boolean;
+  isofix: boolean;
+  esp: boolean;
+  doors2: boolean;
+  doors4: boolean;
+  ledLights: boolean;
+  bluetooth: boolean;
+  dvd: boolean;
+  cruiseControl: boolean;
+  awd: boolean;
+  disabledPeople: boolean;
+  centralLock: boolean;
+}
 
 @Component({
   selector: 'app-create',
@@ -14,6 +39,8 @@ import SwiperCore, {
 })
 export class CreateComponent implements OnInit {
 
+  models = Array<string>();
+  brandFormControl = new FormControl('');
   safety: FormGroup;
   exterior: FormGroup;
   comfort: FormGroup;
@@ -40,6 +67,21 @@ export class CreateComponent implements OnInit {
       disabledPeople: false,
       centralLock: false
     });
+  }
+
+  submit(create: any) {
+    // console.log(create);
+    // console.log(this.safety);
+    // console.log(this.exterior);
+    // console.log(this.comfort);
+    // console.log(this.other);
+    const carAttributes = { ...create.form.value, ...this.safety.value, ...this.exterior.value, ...this.comfort.value, ...this.other.value };
+    console.log(carAttributes);
+  }
+
+  onBrandSelection(event: any) {
+    const brand = event.value as "Audi" | "BMW" | "VW";
+    this.models = allModels[brand];
   }
 
   ngOnInit(): void {

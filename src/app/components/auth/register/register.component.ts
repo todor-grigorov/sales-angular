@@ -38,12 +38,7 @@ export class RegisterComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
 
   submit = (login: any) => {
-    // console.log(login);
     if (login.form.status === "VALID") {
-      // console.log(this.displayName);
-      // console.log(this.photoUrl);
-      // console.log(this.email);
-      // console.log(this.password);
       this.authService.SignUp(this.email, this.password, this.displayName, this.photoUrl)
         .then(res => this.router.navigate(['/signin']))
         .catch(error => {

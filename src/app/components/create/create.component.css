@@ -26,5 +26,12 @@
 }
 
 .checkboxes__row {
-    
+
+}
+
+.add-btn {
+    width: 100%;
+    background-color: #125699;
+    color: #fff;
+    font-size: 1.1rem;
 }
