@@ -1,18 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import SwiperCore, {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-} from 'swiper/core';
 
 @Component({
-  selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-export class CreateComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
   safety: FormGroup;
   exterior: FormGroup;
@@ -45,21 +39,4 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // const swiper = new Swiper(".mySwiper", {
-  //   spaceBetween: 10,
-  //   slidesPerView: 4,
-  //   freeMode: true,
-  //   watchSlidesVisibility: true,
-  //   watchSlidesProgress: true,
-  // });
-  // const swiper2 = new Swiper(".mySwiper2", {
-  //   spaceBetween: 10,
-  //   navigation: {
-  //     nextEl: ".swiper-button-next",
-  //     prevEl: ".swiper-button-prev",
-  //   },
-  //   thumbs: {
-  //     swiper: swiper,
-  //   },
-  // });
 }

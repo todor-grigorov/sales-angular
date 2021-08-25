@@ -23,6 +23,9 @@ import { SigninComponent } from './components/auth/signin/signin.component';
 import { MatSelectModule } from '@angular/material/select';
 import { CreateComponent } from './components/create/create.component';
 import { SwiperModule } from 'swiper/angular';
+import { SearchComponent } from './components/search/search.component';
+import { EditComponent } from './components/edit/edit.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 
@@ -33,7 +36,9 @@ import { SwiperModule } from 'swiper/angular';
     RegisterComponent,
     ContainerComponent,
     SigninComponent,
-    CreateComponent
+    CreateComponent,
+    SearchComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +57,7 @@ import { SwiperModule } from 'swiper/angular';
     AngularFirestoreModule,
     MatSelectModule,
     SwiperModule,
+    MatCheckboxModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
