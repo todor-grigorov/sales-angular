@@ -2,14 +2,17 @@ import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { allModels } from 'src/app/shared/models/allModels';
+import { CrudService } from '../crud.service';
 import SwiperCore, {
   Navigation,
   Pagination,
   Scrollbar,
   A11y,
 } from 'swiper/core';
+import { Router } from '@angular/router';
 
 export interface CarAttributes {
+  uid?: string;
   brand: string;
   model: string;
   price: number;
@@ -30,6 +33,7 @@ export interface CarAttributes {
   awd: boolean;
   disabledPeople: boolean;
   centralLock: boolean;
+  images: Array<string>;
 }
 
 @Component({
@@ -46,7 +50,7 @@ export class CreateComponent implements OnInit {
   comfort: FormGroup;
   other: FormGroup;
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private crudService: CrudService, private router: Router) {
     this.safety = fb.group({
       airbags: false,
       isofix: false,
@@ -75,8 +79,14 @@ export class CreateComponent implements OnInit {
     // console.log(this.exterior);
     // console.log(this.comfort);
     // console.log(this.other);
-    const carAttributes = { ...create.form.value, ...this.safety.value, ...this.exterior.value, ...this.comfort.value, ...this.other.value };
-    console.log(carAttributes);
+    const carAttributes: CarAttributes = { ...create.form.value, ...this.safety.value, ...this.exterior.value, ...this.comfort.value, ...this.other.value };
+    // console.log(carAttributes);
+    this.crudService.createAdd(carAttributes)
+      .then(isSuccess => {
+        if (isSuccess) {
+          this.router.navigate(['/']);
+        }
+      })
   }
 
   onBrandSelection(event: any) {
