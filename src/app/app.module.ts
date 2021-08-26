@@ -30,6 +30,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { ResultsComponent } from './components/results/results.component';
+import { MyaddsComponent } from './components/myadds/myadds.component';
 
 
 
@@ -44,7 +45,8 @@ import { ResultsComponent } from './components/results/results.component';
     SearchComponent,
     EditComponent,
     GalleryComponent,
-    ResultsComponent
+    ResultsComponent,
+    MyaddsComponent,
   ],
   imports: [
     BrowserModule,

@@ -167,4 +167,20 @@ export class CrudService {
         });
     })
   }
+
+  getUserAdds(uid: string): Promise<Array<CarAttributes>> {
+    return new Promise((resolve, reject) => {
+      this.afs.collection("adds", ref => ref.where("uid", "==", uid)).snapshotChanges().pipe(
+        map((actions: any) => {
+          return actions.map((a: any) => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          });
+        })).subscribe((querySnapshot) => {
+          console.log(querySnapshot)
+          resolve(querySnapshot);
+        });
+    });
+  }
 }
