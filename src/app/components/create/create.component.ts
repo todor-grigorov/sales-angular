@@ -1,14 +1,7 @@
-import { formatCurrency } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Renderer2, ElementRef, OnInit, SimpleChanges, ViewChild, NgZone } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { allModels } from 'src/app/shared/models/allModels';
 import { CrudService } from '../crud.service';
-import SwiperCore, {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-} from 'swiper/core';
 import { Router } from '@angular/router';
 
 export interface CarAttributes {
@@ -118,23 +111,6 @@ export class CreateComponent implements OnInit {
 
   ngOnInit(): void {
 
-  }
-
-  ngAfterViewInit() {
-
-    // this.unlistenMouseMove = this.renderer2.listen("upload-file", "change", (event) => {
-    //   // if you do data bindings here, they will work!
-
-    //   this.ngZone.runOutsideAngular(() => {
-    //     // if you do data bindings here, they WILL NOT work!
-    //     this.uploadImages(event);
-    //   });
-    // });
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    // changes.prop contains the old and the new value...
-    console.log(changes);
   }
 
   ngOnDestroy() {
