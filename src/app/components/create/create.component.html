@@ -1,9 +1,13 @@
 <div class="attributes-container">
     <app-gallery [images]="images"></app-gallery>
-    <div class="upload-image-btn-container">
+    <!-- <div class="upload-image-btn-container">
         <button mat-raised-button class="add-btn attach" (click)="handlePhotoClick()">Прикачи снимки</button>
+    </div> -->
+    <div class="upload-file-container">
+        <label for="upload-file">Прикачи снимка</label>
+        <input id="upload-file" #uploadFile (change)="uploadImages($event)" type="file"
+            accept=".png, .bmp, .jpg, .jpeg, .gif" />
     </div>
-    <input id="upload-file" #uploadFile type="file" accept=".png, .bmp, .jpg, .jpeg, .gif" />
     <form class="attributes" #create="ngForm" (ngSubmit)="submit(create)">
         <div class="selects">
             <div class="selects__column">

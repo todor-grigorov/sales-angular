@@ -5,7 +5,7 @@ import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage
 import { Router } from "@angular/router";
 import { CarAttributes } from './create/create.component';
 import { from, Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, finalize } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -50,19 +50,33 @@ export class CrudService {
   }
 
   uploadFileAndGetMetadata(
-    // mediaFolderPath: string,
     fileToUpload: File,
   ): any {
-    const { name } = fileToUpload;
-    const filePath = `${this.basePath}/${new Date().getTime()}_${name}`;
-    const uploadTask: AngularFireUploadTask = this.storage.upload(
-      filePath,
-      fileToUpload,
-    );
-    return {
-      // uploadProgress$: uploadTask.percentageChanges(),
-      downloadUrl: this.getDownloadUrl$(uploadTask, filePath),
-    };
+    return new Promise((resolve, reject) => {
+      const { name } = fileToUpload;
+      const filePath = `${this.basePath}/${new Date().getTime()}_${name}`;
+      const fileRef = this.storage.ref(filePath);
+      fileRef.put(fileToUpload).then((res: any) => {
+        res.ref.getDownloadURL().then((fileUrl: string) => {
+          resolve(fileUrl);
+        });
+      });
+      // const uploadTask: AngularFireUploadTask = this.storage.upload(
+      //   filePath,
+      //   fileToUpload,
+      // )
+      // this.storage.upload(
+      //   filePath,
+      //   fileToUpload,
+      // ).snapshotChanges().pipe(
+      //   finalize(() => {
+      //     fileRef.getDownloadURL().subscribe((url) => {
+      //       console.log(url);
+      //       resolve(url)
+      //     })
+      //   })
+      // );
+    })
   }
 
   private getDownloadUrl$(

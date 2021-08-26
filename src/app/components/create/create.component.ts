@@ -1,5 +1,5 @@
 import { formatCurrency } from '@angular/common';
-import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Renderer2, ElementRef, OnInit, SimpleChanges, ViewChild, NgZone } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { allModels } from 'src/app/shared/models/allModels';
 import { CrudService } from '../crud.service';
@@ -40,7 +40,7 @@ export interface CarAttributes {
   selector: 'app-create',
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CreateComponent implements OnInit {
 
@@ -53,9 +53,10 @@ export class CreateComponent implements OnInit {
   comfort: FormGroup;
   other: FormGroup;
   images = Array<string>();
-  route: string = "";
+  file = {} as File;
+  unlistenMouseMove: () => void = Function;
 
-  constructor(fb: FormBuilder, private crudService: CrudService, private router: Router) {
+  constructor(fb: FormBuilder, private crudService: CrudService, private router: Router, private renderer2: Renderer2, private ngZone: NgZone) {
     this.safety = fb.group({
       airbags: false,
       isofix: false,
@@ -76,33 +77,29 @@ export class CreateComponent implements OnInit {
       disabledPeople: false,
       centralLock: false
     });
-
-    router.events.subscribe(val => {
-      console.log(val);
-      console.log(location.pathname)
-      // if (location.pathname != "") {
-      //   this.route = location.pathname;
-      // } else {
-      //   this.route = "Home";
-      // }
-    })
   }
 
   submit(create: any) {
     const carAttributes: CarAttributes = { ...create.form.value, ...this.safety.value, ...this.exterior.value, ...this.comfort.value, ...this.other.value };
     carAttributes.images = this.images;
+    const user = JSON.parse(localStorage.getItem('user') || '');
+    carAttributes.uid = user.uid;
     this.crudService.createAdd(carAttributes)
       .then(isSuccess => {
         if (isSuccess) {
           this.router.navigate(['/']);
         }
-      })
+      });
   }
 
+
   handlePhotoClick() {
+    this.uploadFile.nativeElement.addEventListener("click", function (evt) {
+      evt.stopPropagation();
+    }, false);
     this.uploadFile.nativeElement.accept = ".png, .bmp, .jpg, .jpeg, .gif";
     this.uploadFile.nativeElement.click();
-    this.uploadFile.nativeElement.addEventListener("change", this.uploadImages.bind(this))
+    this.uploadFile.nativeElement.addEventListener("change", this.uploadImages.bind(this), false);
   }
 
   uploadImages(event: any) {
@@ -120,6 +117,24 @@ export class CreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+  }
+
+  ngAfterViewInit() {
+
+    // this.unlistenMouseMove = this.renderer2.listen("upload-file", "change", (event) => {
+    //   // if you do data bindings here, they will work!
+
+    //   this.ngZone.runOutsideAngular(() => {
+    //     // if you do data bindings here, they WILL NOT work!
+    //     this.uploadImages(event);
+    //   });
+    // });
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    // changes.prop contains the old and the new value...
+    console.log(changes);
   }
 
   ngOnDestroy() {
