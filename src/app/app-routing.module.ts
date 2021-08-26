@@ -5,6 +5,7 @@ import { SigninComponent } from './components/auth/signin/signin.component';
 import { ContainerComponent } from './components/container/container.component';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
+import { ResultsComponent } from './components/results/results.component';
 import { AuthGuard } from "./shared/guard/auth.guard";
 // import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -33,6 +34,10 @@ const routes: Routes = [
     {
         path: 'edit/:id',
         component: EditComponent
+    },
+    {
+        path: 'results',
+        component: ResultsComponent
     },
     // {
     //     path: '**',
