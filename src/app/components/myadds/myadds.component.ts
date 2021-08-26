@@ -17,8 +17,19 @@ export class MyaddsComponent implements OnInit {
     this.crudService.getUserAdds(user.uid)
       .then((docs: Array<CarAttributes>) => {
         this.documents = docs;
-        // this.router.navigateByUrl('/results', { state: docs });
-        // this.router.getCurrentNavigation().extras.state
+      })
+      .catch(error => console.log(error));
+  }
+
+  onDelete(event: Event, id: any) {
+    this.crudService.deleteAdd(id)
+      .then(res => {
+        const user = JSON.parse(localStorage.getItem('user') || '');
+        this.crudService.getUserAdds(user.uid)
+          .then((docs: Array<CarAttributes>) => {
+            this.documents = docs;
+          })
+          .catch(error => console.log(error));
       })
       .catch(error => console.log(error));
   }

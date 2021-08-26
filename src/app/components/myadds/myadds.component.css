@@ -6,10 +6,16 @@
     border-top-width: 4px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .single-add-container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 240px;
+}
+
+.single-add {
     padding: 15px;
     background-color: #eceff5;
     width: 700px;
@@ -17,6 +23,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .add-image-container {
@@ -62,5 +69,23 @@
 }
 
 .add-name:hover {
+    text-decoration: underline;
+}
+
+.myadd-btns-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+}
+
+.myadd-btns-container > p, a {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.myadd-btns-container > p:hover, a:hover {
     text-decoration: underline;
 }

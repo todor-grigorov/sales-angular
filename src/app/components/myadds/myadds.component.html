@@ -1,36 +1,42 @@
 <div class="list-container">
     <div *ngFor="let document of documents" class="single-add-container">
-        <div class="add-image-container">
-            <img src="{{document.images[0]}}" alt="">
+        <div class="single-add">
+            <div class="add-image-container">
+                <img src="{{document.images[0]}}" alt="">
+            </div>
+            <div class="add-info-container">
+                <div class="add-name-price">
+                    <h3 class="add-name">{{document.brand}} {{document.model}}</h3>
+                    <h3>{{document.price}} лв.</h3>
+                </div>
+                <div class="add-info">
+                    <p>
+                        дата на производство - {{document.buildYear}},
+                    </p>
+                    <p>двигател - {{document.engineType}}</p>
+                    <p>Скоростна кутия - {{document.gearType}}</p>
+                    <h6>Особености:</h6>
+                    <p>
+                        <span *ngIf="document.airbags">Въздушни възглавници; </span>
+                        <span *ngIf="document.isofix">Система ISOFIX; </span>
+                        <span *ngIf="document.esp">Електронна програма за стабилизиране; </span>
+                        <span *ngIf="document.doors2">2(3) Врати; </span>
+                        <span *ngIf="document.doors4">4(5) Врати; </span>
+                        <span *ngIf="document.ledLights">LED фарове; </span>
+                        <span *ngIf="document.bluetooth">Bluetooth; </span>
+                        <span *ngIf="document.dvd">DVD; </span>
+                        <span *ngIf="document.cruiseControl">Система за контрол на
+                            скоростта (автопилот); </span>
+                        <span *ngIf="document.awd">4x4; </span>
+                        <span *ngIf="document.disabledPeople">За хора с увреждания; </span>
+                        <span *ngIf="document.centralLock">Централно заключване; </span>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="add-info-container">
-            <div class="add-name-price">
-                <a href="/info/:{{document.id}}" class="add-name">{{document.brand}} {{document.model}}</a>
-                <h3>{{document.price}} лв.</h3>
-            </div>
-            <div class="add-info">
-                <p>
-                    дата на производство - {{document.buildYear}},
-                </p>
-                <p>двигател - {{document.engineType}}</p>
-                <p>Скоростна кутия - {{document.gearType}}</p>
-                <h6>Особености:</h6>
-                <p>
-                    <span *ngIf="document.airbags">Въздушни възглавници; </span>
-                    <span *ngIf="document.isofix">Система ISOFIX; </span>
-                    <span *ngIf="document.esp">Електронна програма за стабилизиране; </span>
-                    <span *ngIf="document.doors2">2(3) Врати; </span>
-                    <span *ngIf="document.doors4">4(5) Врати; </span>
-                    <span *ngIf="document.ledLights">LED фарове; </span>
-                    <span *ngIf="document.bluetooth">Bluetooth; </span>
-                    <span *ngIf="document.dvd">DVD; </span>
-                    <span *ngIf="document.cruiseControl">Система за контрол на
-                        скоростта (автопилот); </span>
-                    <span *ngIf="document.awd">4x4; </span>
-                    <span *ngIf="document.disabledPeople">За хора с увреждания; </span>
-                    <span *ngIf="document.centralLock">Централно заключване; </span>
-                </p>
-            </div>
+        <div class="myadd-btns-container">
+            <a href="/edit/{{document.id}}">РЕДАКТИРАЙ</a>
+            <p (click)="onDelete($event, document.id)">ИЗТРИЙ</p>
         </div>
     </div>
 </div>
