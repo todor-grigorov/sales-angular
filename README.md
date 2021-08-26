@@ -1,5 +1,15 @@
 # SalesAngular
 
+This is an Application for selling cars.
+Guests can SEARCH and PREVIEW car adds.
+Logged users can ADD, EDIT, DELETE, SEARCH and PREVIEW car adds.
+Every user can view a list of the adds he posted.
+Every add can have specifications and images.
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
 
 ## Development server
