@@ -6,6 +6,7 @@ import { Router } from "@angular/router";
 import { CarAttributes } from './create/create.component';
 import { from, Observable } from 'rxjs';
 import { switchMap, finalize } from 'rxjs/operators';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +15,11 @@ export class CrudService {
   private basePath = '/images';
 
   constructor(
-    public afs: AngularFirestore,   // Inject Firestore service
-    public storage: AngularFireStorage,
-    public router: Router,
-    public ngZone: NgZone // NgZone service to remove outside scope warning
+    private afs: AngularFirestore,   // Inject Firestore service
+    private db: AngularFireDatabase,
+    private storage: AngularFireStorage,
+    private router: Router,
+    private ngZone: NgZone // NgZone service to remove outside scope warning
   ) { }
 
   bulkPushFilesToStarage(files: File[]): Promise<Array<string>> {
@@ -61,31 +63,25 @@ export class CrudService {
           resolve(fileUrl);
         });
       });
-      // const uploadTask: AngularFireUploadTask = this.storage.upload(
-      //   filePath,
-      //   fileToUpload,
-      // )
-      // this.storage.upload(
-      //   filePath,
-      //   fileToUpload,
-      // ).snapshotChanges().pipe(
-      //   finalize(() => {
-      //     fileRef.getDownloadURL().subscribe((url) => {
-      //       console.log(url);
-      //       resolve(url)
-      //     })
-      //   })
-      // );
     })
   }
 
-  private getDownloadUrl$(
-    uploadTask: AngularFireUploadTask,
-    path: string,
-  ): Observable<string> {
-    return from(uploadTask).pipe(
-      switchMap((_) => this.storage.ref(path).getDownloadURL()),
-    );
+  getSingleAdd(id: string) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const doc = await this.afs.collection('adds').doc(id).ref.get();
+        // const data = snapshot.data();
+        if (doc.exists) {
+          // console.log(doc.data());
+          resolve(doc.data())
+        } else {
+          resolve(false);
+        }
+      } catch (error) {
+        console.log(error);
+        reject(false);
+      }
+    });
   }
 
   getAdds() {

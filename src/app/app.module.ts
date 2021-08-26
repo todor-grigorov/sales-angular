@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AuthService } from './components/auth/auth.service';
 import { environment } from 'src/environments/environment';
 import { SigninComponent } from './components/auth/signin/signin.component';
@@ -58,6 +59,7 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireDatabaseModule,
     MatSelectModule,
     SwiperModule,
     MatCheckboxModule,

@@ -37,7 +37,7 @@ export interface CarAttributes {
 })
 export class CreateComponent implements OnInit {
 
-  @ViewChild('uploadFile') uploadFile!: ElementRef<HTMLInputElement>;
+  // @ViewChild('uploadFile') uploadFile!: ElementRef<HTMLInputElement>;
 
   models = Array<string>();
   brandFormControl = new FormControl('');
@@ -46,10 +46,8 @@ export class CreateComponent implements OnInit {
   comfort: FormGroup;
   other: FormGroup;
   images = Array<string>();
-  file = {} as File;
-  unlistenMouseMove: () => void = Function;
 
-  constructor(fb: FormBuilder, private crudService: CrudService, private router: Router, private renderer2: Renderer2, private ngZone: NgZone) {
+  constructor(fb: FormBuilder, private crudService: CrudService, private router: Router) {
     this.safety = fb.group({
       airbags: false,
       isofix: false,
@@ -73,27 +71,30 @@ export class CreateComponent implements OnInit {
   }
 
   submit(create: any) {
-    const carAttributes: CarAttributes = { ...create.form.value, ...this.safety.value, ...this.exterior.value, ...this.comfort.value, ...this.other.value };
-    carAttributes.images = this.images;
-    const user = JSON.parse(localStorage.getItem('user') || '');
-    carAttributes.uid = user.uid;
-    this.crudService.createAdd(carAttributes)
-      .then(isSuccess => {
-        if (isSuccess) {
-          this.router.navigate(['/']);
-        }
-      });
+    if (create.form.valid) {
+      const carAttributes: CarAttributes = { ...create.form.value, ...this.safety.value, ...this.exterior.value, ...this.comfort.value, ...this.other.value };
+      carAttributes.brand = this.brandFormControl.value;
+      carAttributes.images = this.images;
+      const user = JSON.parse(localStorage.getItem('user') || '');
+      carAttributes.uid = user.uid;
+      this.crudService.createAdd(carAttributes)
+        .then(isSuccess => {
+          if (isSuccess) {
+            this.router.navigate(['/']);
+          }
+        });
+    }
   }
 
 
-  handlePhotoClick() {
-    this.uploadFile.nativeElement.addEventListener("click", function (evt) {
-      evt.stopPropagation();
-    }, false);
-    this.uploadFile.nativeElement.accept = ".png, .bmp, .jpg, .jpeg, .gif";
-    this.uploadFile.nativeElement.click();
-    this.uploadFile.nativeElement.addEventListener("change", this.uploadImages.bind(this), false);
-  }
+  // handlePhotoClick() {
+  //   this.uploadFile.nativeElement.addEventListener("click", function (evt) {
+  //     evt.stopPropagation();
+  //   }, false);
+  //   this.uploadFile.nativeElement.accept = ".png, .bmp, .jpg, .jpeg, .gif";
+  //   this.uploadFile.nativeElement.click();
+  //   this.uploadFile.nativeElement.addEventListener("change", this.uploadImages.bind(this), false);
+  // }
 
   uploadImages(event: any) {
     if (event.target.files.length) {
