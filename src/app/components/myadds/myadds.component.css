@@ -89,3 +89,7 @@
 .myadd-btns-container > p:hover, a:hover {
     text-decoration: underline;
 }
+
+.no-adds {
+    text-align: center;
+}

@@ -31,6 +31,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { ResultsComponent } from './components/results/results.component';
 import { MyaddsComponent } from './components/myadds/myadds.component';
+import { DetailsComponent } from './components/details/details.component';
 
 
 
@@ -47,6 +48,7 @@ import { MyaddsComponent } from './components/myadds/myadds.component';
     GalleryComponent,
     ResultsComponent,
     MyaddsComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,

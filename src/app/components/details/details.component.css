@@ -1,0 +1,49 @@
+.attributes-container {
+    margin-top: 5%;
+    padding: 35px;
+    border: 1px solid #125699;
+    border-top-width: 4px;
+}
+
+.add-name-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-name-price > h3 {
+    font-weight: 700 !important;
+    font-size: 1.3rem;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.add-price {
+    color: #125699;
+}
+
+.add-price-text {
+    margin-right: 20px;
+}
+
+.main-car-specs {
+    margin-top: 20px;
+}
+
+.other-car-specs {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.other-car-specs__column {
+    width: 48%;
+    max-width: 49%;
+}
+
+.other-car-specs__row > h4 {
+    margin-bottom: 5px;
+}
+
+.other-car-specs__row > ul {
+    margin-top: 5px;
+}

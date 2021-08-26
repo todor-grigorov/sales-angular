@@ -65,3 +65,7 @@
 .add-name:hover {
     text-decoration: underline;
 }
+
+.no-adds {
+    text-align: center;
+}

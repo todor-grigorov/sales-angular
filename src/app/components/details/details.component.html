@@ -1,0 +1,59 @@
+<div class="attributes-container">
+    <app-gallery [images]="images"></app-gallery>
+    <div class="add-name-price">
+        <h3 class="add-name">{{document.brand}} {{document.model}}</h3>
+        <h3><span class="add-price-text">Цена: </span><span class="add-price">{{document.price}} лв.</span></h3>
+    </div>
+
+    <pre></pre>
+    <div class="main-car-specs">
+        <p><b>Дата на производство</b>: {{document.buildYear}}</p>
+        <p><b>Тип двигател</b>: {{document.engineType}}</p>
+        <p><b>Скоростна кутия</b>: {{document.gearType}}</p>
+    </div>
+
+    <pre></pre>
+    <div class="other-car-specs">
+        <div class="other-car-specs__column">
+            <div class="other-car-specs__row">
+                <h4><b>Безопасност:</b></h4>
+                <ul>
+                    <li *ngIf="document.airbags">Въздушни възглавници</li>
+                    <li *ngIf="document.isofix">Система ISOFIX</li>
+                    <li *ngIf="document.esp">Електронна програма за стабилизиране</li>
+                </ul>
+            </div>
+
+            <div class="other-car-specs__row">
+                <h4><b>Екстериор:</b></h4>
+                <ul>
+                    <li *ngIf="document.doors2">2(3) Врати</li>
+                    <li *ngIf="document.doors4">4(5) Врати</li>
+                    <li *ngIf="document.ledLights">LED фарове</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="other-car-specs__column">
+            <div class="other-car-specs__row">
+                <h4><b>Комфорт:</b></h4>
+                <ul>
+                    <li *ngIf="document.bluetooth">Bluetooth</li>
+                    <li *ngIf="document.dvd">DVD</li>
+                    <li *ngIf="document.cruiseControl">Система за контрол на
+                        скоростта
+                        (автопилот)</li>
+                </ul>
+            </div>
+
+            <div class="other-car-specs__row">
+                <h4><b>Други:</b></h4>
+                <ul>
+                    <li *ngIf="document.awd">4x4</li>
+                    <li *ngIf="document.disabledPeople">За хора с увреждания</li>
+                    <li *ngIf="document.centralLock">Централно заключване</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

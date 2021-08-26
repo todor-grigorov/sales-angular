@@ -4,6 +4,7 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { ContainerComponent } from './components/container/container.component';
 import { CreateComponent } from './components/create/create.component';
+import { DetailsComponent } from './components/details/details.component';
 import { EditComponent } from './components/edit/edit.component';
 import { MyaddsComponent } from './components/myadds/myadds.component';
 import { ResultsComponent } from './components/results/results.component';
@@ -43,6 +44,10 @@ const routes: Routes = [
     {
         path: 'myadds',
         component: MyaddsComponent
+    },
+    {
+        path: 'details/:id',
+        component: DetailsComponent
     },
     // {
     //     path: '**',

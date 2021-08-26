@@ -1,4 +1,5 @@
 <div class="list-container">
+    <h2 *ngIf="!documents.length" class="no-adds">Няма добавени обяви</h2>
     <div *ngFor="let document of documents" class="single-add-container">
         <div class="single-add">
             <div class="add-image-container">
