@@ -99,15 +99,22 @@ export class CrudService {
     });
   }
 
-  updateAdd(carAdd: CarAttributes) {
+  updateAdd(carAdd: CarAttributes, id: string) {
     return new Promise((resolve, reject) => {
-      delete carAdd.uid;
-      this.afs.doc('adds/' + carAdd.uid).update(carAdd)
+      // delete carAdd.uid;
+      var docRef = this.afs.collection('adds').doc(id);
+      docRef.update(carAdd)
         .then(() => resolve(true))
         .catch(error => {
           console.log(error);
           reject(false);
         });
+      // this.afs.doc('adds/' + carAdd.uid).update(carAdd)
+      //   .then(() => resolve(true))
+      //   .catch(error => {
+      //     console.log(error);
+      //     reject(false);
+      //   });
     });
   }
 

@@ -21,15 +21,14 @@ export class EditComponent implements OnInit {
   buildYearFormControl = new FormControl('');
   engineTypeFormControl = new FormControl('');
   gearTypeFormControl = new FormControl('');
+  priceFormControl = new FormControl('');
+  phoneNumberFormControl = new FormControl('');
+  addressFormControl = new FormControl('');
   safety: FormGroup;
   exterior: FormGroup;
   comfort: FormGroup;
   other: FormGroup;
   images = Array<string>();
-
-  address = "";
-  phoneNumber = "";
-  price = "";
 
   constructor(fb: FormBuilder, private crudService: CrudService, private router: Router, private route: ActivatedRoute) {
     this.route.paramMap.subscribe(paramMap => {
@@ -59,16 +58,25 @@ export class EditComponent implements OnInit {
   }
 
   submit(create: any) {
-    const carAttributes: CarAttributes = { ...create.form.value, ...this.safety.value, ...this.exterior.value, ...this.comfort.value, ...this.other.value };
+    const carAttributes: CarAttributes = { ...this.safety.value, ...this.exterior.value, ...this.comfort.value, ...this.other.value };
     carAttributes.images = this.images;
-    const user = JSON.parse(localStorage.getItem('user') || '');
-    carAttributes.uid = user.uid;
-    this.crudService.createAdd(carAttributes)
-      .then(isSuccess => {
-        if (isSuccess) {
-          this.router.navigate(['/']);
-        }
-      });
+    carAttributes.brand = this.brandFormControl.value;
+    carAttributes.model = this.modelFormControl.value;
+    carAttributes.buildYear = this.buildYearFormControl.value;
+    carAttributes.engineType = this.engineTypeFormControl.value;
+    carAttributes.gearType = this.gearTypeFormControl.value;
+    carAttributes.address = this.addressFormControl.value;
+    carAttributes.phoneNumber = this.phoneNumberFormControl.value;
+    carAttributes.price = this.priceFormControl.value;
+    carAttributes.uid = this.document.uid;
+    if (this.id) {
+      this.crudService.updateAdd(carAttributes, this.id)
+        .then(isSuccess => {
+          if (isSuccess) {
+            this.router.navigate(['/']);
+          }
+        });
+    }
   }
 
   uploadImages(event: any) {
@@ -86,15 +94,16 @@ export class EditComponent implements OnInit {
   }
 
   setAddValues(doc: CarAttributes) {
-    this.address = doc.address;
-    this.phoneNumber = doc.phoneNumber;
-    this.price = doc.price.toString();
+    this.addressFormControl.setValue(doc.address);
+    this.phoneNumberFormControl.setValue(doc.phoneNumber);
+    this.priceFormControl.setValue(doc.price.toString());
     this.brandFormControl.setValue(doc.brand);
     this.models = allModels[doc.brand as "Audi" | "BMW" | "VW"];
     this.modelFormControl.setValue(allModels[doc.brand as "Audi" | "BMW" | "VW"].find(model => model === doc.model));
     this.buildYearFormControl.setValue(doc.buildYear);
     this.engineTypeFormControl.setValue(doc.engineType);
     this.gearTypeFormControl.setValue(doc.gearType);
+    this.images = doc.images;
     this.safety.patchValue({
       airbags: doc.airbags,
       isofix: doc.isofix,

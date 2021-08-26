@@ -42,7 +42,7 @@
                 <div class="selects__row">
                     <mat-form-field class="mat-form-fields" appearance="fill">
                         <mat-label>Цена</mat-label>
-                        <input matInput placeholder="1000" value="{{price}}" name="price" ngModel>
+                        <input matInput placeholder="1000" [formControl]="priceFormControl" name="price" ngModel>
                     </mat-form-field>
 
                     <mat-form-field class="mat-form-fields" appearance="fill">
@@ -278,8 +278,8 @@
                 <div class="selects__row">
                     <mat-form-field class="mat-form-fields" appearance="fill">
                         <mat-label>Телефонен номер</mat-label>
-                        <input matInput required placeholder="0887 000 000" value="{{phoneNumber}}" name="phoneNumber"
-                            ngModel>
+                        <input matInput required [formControl]="phoneNumberFormControl" placeholder="0887 000 000"
+                            name="phoneNumber" ngModel>
                     </mat-form-field>
 
 
@@ -288,7 +288,7 @@
                     <mat-form-field class="mat-form-fields" appearance="fill">
                         <mat-label>Адрес</mat-label>
                         <input matInput required placeholder="гр. София, кв. '1', ул. 'Улица', №1"
-                            value="document.address" name="address" value="{{address}}" ngModel>
+                            value="document.address" [formControl]="addressFormControl" name="address" ngModel>
                     </mat-form-field>
 
                     <div class="add-btn-container">
