@@ -1,4 +1,6 @@
 import { Component, NgModule, OnInit } from '@angular/core';
+import { CarAttributes } from '../create/create.component';
+import { CrudService } from '../crud.service';
 
 
 @Component({
@@ -9,9 +11,15 @@ import { Component, NgModule, OnInit } from '@angular/core';
 
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  documents = Array<CarAttributes>();
+
+  constructor(private crudService: CrudService) { }
 
   ngOnInit(): void {
+    this.crudService.getLatestAdds()
+      .then(res => {
+        this.documents = res;
+      })
   }
 
 }

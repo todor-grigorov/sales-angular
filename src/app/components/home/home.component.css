@@ -1,6 +1,10 @@
 .home-container {
     width: 100%;
-    height: 100%;
+}
+
+.home-container > h1 {
+    text-align: center;
+    margin: 20px;
 }
 
 .home-image-container {
@@ -9,4 +13,72 @@
 
 .home-image-container > img {
     width: 100%;
+}
+
+.list-container {
+    margin-top: 5%;
+    /* padding: 35px; */
+    /* border: 1px solid #125699; */
+    /* border-top-width: 4px; */
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.single-add-container {
+    padding: 15px;
+    background-color: #eceff5;
+    width: 440px;
+    height: 140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.add-image-container {
+    width: 140px;
+    height: 100px;
+}
+
+.add-image-container > img {
+    width: 100%;
+    height: 100%;
+}
+
+.add-info-container {
+    max-width: 290px;
+    width: 280px;
+    align-self: baseline;
+}
+
+.add-info > p {
+    margin: 0 0 0 3px;
+}
+
+.add-info > h6 {
+    font-size: 1rem;
+    margin: 5px 0 0 0;
+}
+
+.add-name-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-name-price > h3, a {
+    font-weight: 700 !important;
+    font-size: 1.3rem;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.add-name {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.add-name:hover {
+    text-decoration: underline;
 }

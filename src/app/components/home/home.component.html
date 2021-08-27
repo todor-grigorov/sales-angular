@@ -2,4 +2,26 @@
     <div class="home-image-container">
         <img src="assets/images/home.jpg" alt="">
     </div>
+
+    <pre></pre>
+    <div class="list-container">
+        <div *ngFor="let document of documents" class="single-add-container">
+            <div class="add-image-container">
+                <img src="{{document.images[0]}}" alt="">
+            </div>
+            <div class="add-info-container">
+                <div class="add-name-price">
+                    <a href="/details/{{document.id}}" class="add-name">{{document.brand}} {{document.model}}</a>
+                    <h3>{{document.price}} лв.</h3>
+                </div>
+                <div class="add-info">
+                    <p>
+                        дата на производство - {{document.buildYear}},
+                    </p>
+                    <p>двигател - {{document.engineType}}</p>
+                    <p>Скоростна кутия - {{document.gearType}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
