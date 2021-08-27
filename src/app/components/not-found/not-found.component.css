@@ -1,0 +1,9 @@
+.notFound-container {
+    width: 100%;
+    height: 65%;
+}
+
+.notFound-container > img {
+    width: 100%;
+    height: 100%;
+}

@@ -7,6 +7,7 @@ import { CreateComponent } from './components/create/create.component';
 import { DetailsComponent } from './components/details/details.component';
 import { EditComponent } from './components/edit/edit.component';
 import { MyaddsComponent } from './components/myadds/myadds.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ResultsComponent } from './components/results/results.component';
 import { SearchComponent } from './components/search/search.component';
 import { AuthGuard } from "./shared/guard/auth.guard";
@@ -57,10 +58,10 @@ const routes: Routes = [
         path: 'search',
         component: SearchComponent
     },
-    // {
-    //     path: '**',
-    //     component: NotFoundComponent
-    // }
+    {
+        path: '**',
+        component: NotFoundComponent
+    }
 ];
 
 @NgModule({
