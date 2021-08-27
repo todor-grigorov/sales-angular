@@ -79,8 +79,14 @@ export class AuthService {
 
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user') || '');
-    return (user !== null && user.email) ? true : false;
+    const localStorageUser = localStorage.getItem('user');
+
+    if (localStorageUser) {
+      const user = JSON.parse(localStorageUser);
+      return (user !== null && user.email) ? true : false;
+    }
+
+    return false;
   }
 
   /* Setting up user data when sign in with username/password, 

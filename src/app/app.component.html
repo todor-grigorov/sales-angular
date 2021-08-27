@@ -12,10 +12,9 @@
                 </span>
                 <span>|</span>
                 <span>
-                    <a href="/register">Регистрация</a>
+                    <a *ngIf="!isLoggedIn" href="/register">Регистрация</a>
                 </span>
 
-                <span *ngIf="displayName">|</span>
                 <span *ngIf="displayName">
                     <a href="/profile">{{displayName}}</a>
                 </span>

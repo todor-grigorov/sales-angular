@@ -32,11 +32,13 @@ const routes: Routes = [
     },
     {
         path: 'create',
-        component: CreateComponent
+        component: CreateComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'edit/:id',
-        component: EditComponent
+        component: EditComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'results',
@@ -44,7 +46,8 @@ const routes: Routes = [
     },
     {
         path: 'myadds',
-        component: MyaddsComponent
+        component: MyaddsComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'details/:id',
