@@ -8,6 +8,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { EditComponent } from './components/edit/edit.component';
 import { MyaddsComponent } from './components/myadds/myadds.component';
 import { ResultsComponent } from './components/results/results.component';
+import { SearchComponent } from './components/search/search.component';
 import { AuthGuard } from "./shared/guard/auth.guard";
 // import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -48,6 +49,10 @@ const routes: Routes = [
     {
         path: 'details/:id',
         component: DetailsComponent
+    },
+    {
+        path: 'search',
+        component: SearchComponent
     },
     // {
     //     path: '**',
