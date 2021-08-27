@@ -5,7 +5,7 @@
                 <mat-form-field class="mat-form-fields" appearance="fill">
                     <mat-label>Марка</mat-label>
                     <mat-select matNativeControl [formControl]="brandFormControl"
-                        (selectionChange)="onBrandSelection($event)" id="brandSelectId" name="brand" ngModel>
+                        (selectionChange)="onBrandSelection($event)" id="brandSelectId" name="brand" ngDefaultControl>
                         <mat-option selected value="">Избери
                         </mat-option>
                         <mat-option value="Audi">Audi
@@ -19,7 +19,8 @@
 
                 <mat-form-field class="mat-form-fields" appearance="fill">
                     <mat-label> Модел</mat-label>
-                    <mat-select matNativeControl id="modelSelectId" name="model" ngModel>
+                    <mat-select matNativeControl id="modelSelectId" [formControl]="modelFormControl" name="model"
+                        ngDefaultControl>
                         <mat-option selected value="">Избери
                         </mat-option>
                         <mat-option *ngFor="let model of models" value="{{model}}">{{model}}
@@ -31,19 +32,22 @@
             <div class="selects__row">
                 <mat-form-field class="mat-form-fields" appearance="fill">
                     <mat-label>Цена - от (лв.)</mat-label>
-                    <input matInput placeholder="1000" name="priceFrom" ngModel>
+                    <input matInput [formControl]="priceFromFormControl" placeholder="1000" name="priceFrom"
+                        ngDefaultControl>
                 </mat-form-field>
 
                 <mat-form-field class="mat-form-fields" appearance="fill">
                     <mat-label>Цена - до (лв.)</mat-label>
-                    <input matInput placeholder="50000" name="priceTo" ngModel>
+                    <input matInput [formControl]="priceToFormControl" placeholder="50000" name="priceTo"
+                        ngDefaultControl>
                 </mat-form-field>
             </div>
 
             <div class="selects__row">
                 <mat-form-field class="mat-form-fields" appearance="fill">
                     <mat-label>Тип двигател</mat-label>
-                    <mat-select matNativeControl id="engineType" name="engineType" ngModel>
+                    <mat-select matNativeControl [formControl]="engineTypeFormControl" id="engineType" name="engineType"
+                        ngDefaultControl>
                         <mat-option value="">всички типове
                         </mat-option>
                         <mat-option value="Бензинов">Бензинов
@@ -59,7 +63,8 @@
 
                 <mat-form-field class="mat-form-fields" appearance="fill">
                     <mat-label>Скоростна кутия</mat-label>
-                    <mat-select matNativeControl id="gearType" ame="gearType" ngModel>
+                    <mat-select matNativeControl [formControl]="gearTypeFormControl" id="gearType" name="gearType"
+                        ngDefaultControl>
                         <mat-option value="">Без значение
                         </mat-option>
                         <mat-option value="Ръчна">Ръчна
@@ -78,7 +83,8 @@
             <div class="selects__row">
                 <mat-form-field class="mat-form-fields" appearance="fill">
                     <mat-label>Година на производство - от</mat-label>
-                    <mat-select matNativeControl id="yearFrom" name="buildYearFrom" ngModel>
+                    <mat-select matNativeControl [formControl]="buildYearFromFormControl" id="yearFrom"
+                        name="buildYearFrom" ngDefaultControl>
                         <mat-option value="">
                         </mat-option>
                         <mat-option value="2021">от 2021 г.
@@ -270,7 +276,8 @@
 
                 <mat-form-field class="mat-form-fields" appearance="fill">
                     <mat-label>Година на производство - до</mat-label>
-                    <mat-select matNativeControl id="yearTo" name="buildYearTo" ngModel>
+                    <mat-select matNativeControl [formControl]="buildYearToFormControl" id="yearTo" name="buildYearTo"
+                        ngDefaultControl>
                         <mat-option value="">
                         </mat-option>
                         <mat-option value="2021">от 2021 г.

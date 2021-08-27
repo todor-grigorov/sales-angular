@@ -12,7 +12,7 @@ export class ResultsComponent implements OnInit {
   documents = Array<CarAttributes>();
 
   constructor(private router: Router) {
-    this.documents = this.router.getCurrentNavigation()!.extras.state as Array<CarAttributes>;
+    this.documents = this.router.getCurrentNavigation()!.extras.state?.docs as Array<CarAttributes>;
     console.log(this.documents);
 
   }
