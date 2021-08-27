@@ -73,7 +73,7 @@ export class EditComponent implements OnInit {
       this.crudService.updateAdd(carAttributes, this.id)
         .then(isSuccess => {
           if (isSuccess) {
-            this.router.navigate(['/']);
+            this.router.navigate(['myadds']);
           }
         });
     }

@@ -77,25 +77,6 @@ export class CreateComponent implements OnInit {
   submit(create: any) {
     if (create.form.valid) {
       let carAttributes: CarAttributes = { ...create.form.value, ...this.safety.value, ...this.exterior.value, ...this.comfort.value, ...this.other.value };
-      // Object.keys(carAttributes).forEach(key => {
-      //   let el = carAttributes[key];
-      //   if (el === false) {
-      //     el = "";
-      //   }
-      // })
-
-      // carAttributes.airbags = carAttributes.airbags === false ? "" : carAttributes.airbags;
-      // carAttributes.esp
-      // carAttributes.doors2
-      // carAttributes.doors4
-      // carAttributes.ledLights
-      // carAttributes.bluetooth
-      // carAttributes.dvd
-      // carAttributes.cruiseControl
-      // carAttributes.awd
-      // carAttributes.disabledPeople
-      // carAttributes.centralLock
-
 
       carAttributes.brand = this.brandFormControl.value;
       carAttributes.images = this.images;
@@ -104,21 +85,11 @@ export class CreateComponent implements OnInit {
       this.crudService.createAdd(carAttributes)
         .then(isSuccess => {
           if (isSuccess) {
-            this.router.navigate(['/']);
+            this.router.navigate(['myadds']);
           }
         });
     }
   }
-
-
-  // handlePhotoClick() {
-  //   this.uploadFile.nativeElement.addEventListener("click", function (evt) {
-  //     evt.stopPropagation();
-  //   }, false);
-  //   this.uploadFile.nativeElement.accept = ".png, .bmp, .jpg, .jpeg, .gif";
-  //   this.uploadFile.nativeElement.click();
-  //   this.uploadFile.nativeElement.addEventListener("change", this.uploadImages.bind(this), false);
-  // }
 
   uploadImages(event: any) {
     if (event.target.files.length) {
