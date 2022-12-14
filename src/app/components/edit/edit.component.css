@@ -5,12 +5,14 @@
     border-top-width: 4px;
 }
 
-.selects, .checkboxes {
+.selects,
+.checkboxes {
     display: flex;
     justify-content: space-evenly;
 }
 
-.selects__column, .checkboxes__column {
+.selects__column,
+.checkboxes__column {
     width: 48%;
     max-width: 49%;
 }
@@ -25,9 +27,7 @@
     max-width: 48%;
 }
 
-.checkboxes__row {
-
-}
+.checkboxes__row {}
 
 .add-btn {
     width: 100%;
@@ -54,7 +54,7 @@
     width: 30%;
 }
 
-.upload-file-container > label {
+.upload-file-container>label {
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 10px;
@@ -62,4 +62,32 @@
 
 #upload-file {
     /* display: none; */
+}
+
+@media screen and (max-width: 500px) {
+    .attributes-container {
+        padding: 0.5rem;
+    }
+
+    .upload-file-container {
+        width: 100%;
+    }
+
+    .selects {
+        flex-direction: column;
+    }
+
+    .selects__column {
+        min-width: none;
+        max-width: none;
+        width: 100%;
+    }
+
+    :host::ng-deep.mat-checkbox-layout {
+        white-space: normal !important;
+    }
+
+    :host::ng-deep.mat-checkbox-inner-container {
+        margin-top: 4px;
+    }
 }
