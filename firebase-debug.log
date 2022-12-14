@@ -1,12 +1,90 @@
-[debug] [2021-08-21T19:20:40.150Z] ----------------------------------------------------------------------
-[debug] [2021-08-21T19:20:40.153Z] Command:       /usr/local/bin/node /usr/local/bin/firebase login:ci --no-localhost
-[debug] [2021-08-21T19:20:40.154Z] CLI Version:   9.16.5
-[debug] [2021-08-21T19:20:40.154Z] Platform:      linux
-[debug] [2021-08-21T19:20:40.154Z] Node Version:  v14.17.4
-[debug] [2021-08-21T19:20:40.155Z] Time:          Sat Aug 21 2021 22:20:40 GMT+0300 (Eastern European Summer Time)
-[debug] [2021-08-21T19:20:40.155Z] ----------------------------------------------------------------------
+[debug] [2021-08-27T14:43:34.332Z] ----------------------------------------------------------------------
+[debug] [2021-08-27T14:43:34.335Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2021-08-27T14:43:34.335Z] CLI Version:   9.16.6
+[debug] [2021-08-27T14:43:34.336Z] Platform:      linux
+[debug] [2021-08-27T14:43:34.336Z] Node Version:  v14.17.4
+[debug] [2021-08-27T14:43:34.336Z] Time:          Fri Aug 27 2021 17:43:34 GMT+0300 (Eastern European Summer Time)
+[debug] [2021-08-27T14:43:34.337Z] ----------------------------------------------------------------------
 [debug] 
+[debug] [2021-08-27T14:43:34.419Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-08-27T14:43:34.419Z] > authorizing via signed-in user (t.huawei.device@gmail.com)
 [info] 
-[info] Visit this URL on any device to log in:
-[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=225578333&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/todor/Documents/GitHub/sales-angular
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-08-27T14:44:47.989Z] > refreshing access token with scopes: []
+[debug] [2021-08-27T14:44:47.991Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-08-27T14:44:48.143Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Fri, 27 Aug 2021 14:44:48 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-27T14:44:48.227Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2021-08-27T14:44:48.520Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2021-08-27T14:44:48.520Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project car-sales-3dc8a (car-sales) 
+[info] 
+=== Firestore Setup
+[debug] [2021-08-27T14:44:51.670Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-08-27T14:44:51.670Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-08-27T14:44:51.788Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Fri, 27 Aug 2021 14:44:51 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-27T14:44:51.867Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/car-sales-3dc8a/services/firestore.googleapis.com  
+ 
+[debug] [2021-08-27T14:44:52.915Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 27 Aug 2021 14:44:52 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-27T14:44:52.917Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/car-sales-3dc8a  
+ 
+[debug] [2021-08-27T14:44:53.304Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 27 Aug 2021 14:44:53 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-27T14:44:53.305Z] database_type: CLOUD_FIRESTORE
+[debug] [2021-08-27T14:44:53.306Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-08-27T14:44:53.307Z] > authorizing via signed-in user (t.huawei.device@gmail.com)
+[debug] [2021-08-27T14:44:53.307Z] [iam] checking project car-sales-3dc8a for permissions ["firebase.projects.get"]
+[debug] [2021-08-27T14:44:53.308Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/car-sales-3dc8a:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-08-27T14:44:54.167Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 27 Aug 2021 14:44:54 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=769","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2021-08-27T14:45:50.930Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/car-sales-3dc8a/releases?pageSize=10&pageToken=  
+ 
+[debug] [2021-08-27T14:45:51.754Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 27 Aug 2021 14:45:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-27T14:45:51.755Z] Found ruleset: projects/car-sales-3dc8a/rulesets/eae88f7b-2fbc-4f2a-9590-9d748c389a98
+[debug] [2021-08-27T14:45:51.756Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/car-sales-3dc8a/rulesets/eae88f7b-2fbc-4f2a-9590-9d748c389a98  
+ 
+[debug] [2021-08-27T14:45:52.470Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 27 Aug 2021 14:45:52 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2021-08-27T14:46:05.119Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/car-sales-3dc8a/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2021-08-27T14:46:05.121Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/car-sales-3dc8a/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2021-08-27T14:46:05.452Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 27 Aug 2021 14:46:05 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-27T14:46:05.455Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 27 Aug 2021 14:46:05 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
 [info] 
