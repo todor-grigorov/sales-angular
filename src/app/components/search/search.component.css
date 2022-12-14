@@ -1,3 +1,7 @@
+.mat-checkbox-layout {
+    white-space: normal !important;
+}
+
 .attributes {
     margin-top: 5%;
     padding: 35px;
@@ -5,12 +9,14 @@
     border-top-width: 4px;
 }
 
-.selects, .checkboxes {
+.selects,
+.checkboxes {
     display: flex;
     justify-content: space-evenly;
 }
 
-.selects__column, .checkboxes__column {
+.selects__column,
+.checkboxes__column {
     width: 48%;
     max-width: 49%;
 }
@@ -39,4 +45,35 @@
 
 .add-btn-container {
     width: 100%;
+}
+
+.single-checkbox>label {
+    max-width: inherit !important;
+    white-space: normal !important;
+}
+
+@media screen and (max-width: 850px) {
+    .attributes {
+        padding: 1rem 10px;
+    }
+
+    .selects {
+        flex-direction: column;
+    }
+
+    .selects__column {
+        min-width: none;
+        max-width: none;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    :host::ng-deep.mat-checkbox-layout {
+        white-space: normal !important;
+    }
+
+    :host::ng-deep.mat-checkbox-inner-container {
+        margin-top: 4px;
+    }
 }
