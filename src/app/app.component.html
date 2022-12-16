@@ -19,7 +19,7 @@
                     <a *ngIf="!isLoggedIn" href="/register">{{'AUTH.REGISTER' | translate}}</a>
                 </span>
 
-                <span *ngIf="displayName">
+                <span *ngIf="displayName && isLoggedIn">
                     <a href="/profile">{{displayName}}</a>
                 </span>
                 
