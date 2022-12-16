@@ -39,7 +39,7 @@
 
 .add-image-container {
     width: 140px;
-    height: 100px;
+    /* height: 100px; */
 }
 
 .add-image-container>img {
@@ -103,6 +103,10 @@ a {
 }
 
 @media screen and (max-width: 500px) {
+    .single-add-container {
+        height: 130px;
+    }
+
     .add-image-container {
         flex: 1;
         margin-right: 1rem;
@@ -110,5 +114,10 @@ a {
 
     .add-info-container {
         flex: 1.8;
+    }
+
+    .add-name-price>h3,
+    a {
+        font-size: 1.1rem;
     }
 }

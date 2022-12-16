@@ -145,6 +145,7 @@ a:hover {
 
     .single-add-container {
         flex-direction: column;
+        width: 97%;
     }
 
     .single-add {
@@ -155,5 +156,10 @@ a:hover {
 
     .myadd-btns-container {
         flex-direction: row;
+    }
+
+    .add-name-price>h3,
+    a {
+        font-size: 1.1rem;
     }
 }
