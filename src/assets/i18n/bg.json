@@ -17,7 +17,8 @@
         "TITLE": "AUTO DEALER - Намери своя автомобил",
         "MANUFACTURER_DATE": "дата на производство",
         "ENGINE": "двигател",
-        "TRANSMISSION": "скоростна кутия"
+        "TRANSMISSION": "скоростна кутия",
+        "CURRENCY": "лв."
     },
     "REGISTER": {
         "TITLE": "Регистрация",
@@ -107,5 +108,15 @@
         "PHONE_NUMBER": "Телефонен номер",
         "ADDRESS": "Адрес",
         "CREATE_ADD": "Създай обява"
+    },
+    "MY_ADDS": {
+        "NO_ADDS": "Няма добавени обяви",
+        "EDIT_BTN": "РЕДАКТИРАЙ",
+        "DELETE_BTN": "ИЗТРИЙ",
+        "CURRENCY": "лв.",
+        "MANUFACTURER_DATE": "дата на производство",
+        "ENGINE": "двигател",
+        "TRANSMISSION": "скоростна кутия",
+        "PROPERTIES": "Особености"
     }
 }

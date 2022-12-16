@@ -17,7 +17,8 @@
         "TITLE": "AUTO DEALER - Find your car",
         "MANUFACTURER_DATE": "manufacture date",
         "ENGINE": "engine",
-        "TRANSMISSION": "transmission"
+        "TRANSMISSION": "transmission",
+        "CURRENCY": "lv."
     },
     "REGISTER": {
         "TITLE": "Register",
@@ -107,5 +108,15 @@
         "PHONE_NUMBER": "Phone number",
         "ADDRESS": "Address",
         "CREATE_ADD": "Create add"
+    },
+    "MY_ADDS": {
+        "NO_ADDS": "No Adds",
+        "EDIT_BTN": "EDIT",
+        "DELETE_BTN": "DELETE",
+        "CURRENCY": "lv.",
+        "MANUFACTURER_DATE": "manufacture date",
+        "ENGINE": "engine",
+        "TRANSMISSION": "Transmission",
+        "PROPERTIES": "Properties"
     }
 }

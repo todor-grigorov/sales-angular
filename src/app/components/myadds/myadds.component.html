@@ -1,5 +1,5 @@
 <div class="list-container">
-    <h2 *ngIf="!documents.length" class="no-adds">Няма добавени обяви</h2>
+    <h2 *ngIf="!documents.length" class="no-adds">{{'MY_ADDS.NO_ADDS' | translate}}</h2>
     <div *ngFor="let document of documents" class="single-add-container">
         <div class="single-add">
             <div class="add-image-container">
@@ -8,36 +8,35 @@
             <div class="add-info-container">
                 <div class="add-name-price">
                     <h3 class="add-name">{{document.brand}} {{document.model}}</h3>
-                    <h3>{{document.price}} лв.</h3>
+                    <h3>{{document.price}} {{'MY_ADDS.CURRENCY' | translate}}</h3>
                 </div>
                 <div class="add-info">
                     <p>
-                        дата на производство - {{document.buildYear}},
+                        {{'MY_ADDS.MANUFACTURER_DATE' | translate}} - {{document.buildYear}},
                     </p>
-                    <p>двигател - {{document.engineType}}</p>
-                    <p>Скоростна кутия - {{document.gearType}}</p>
-                    <h6>Особености:</h6>
+                    <p>{{'MY_ADDS.ENGINE' | translate}} - {{document.engineType}}</p>
+                    <p>{{'MY_ADDS.TRANSMISSION' | translate}} - {{document.gearType}}</p>
+                    <h6>{{'MY_ADDS.PROPERTIES' | translate}}:</h6>
                     <p>
-                        <span *ngIf="document.airbags">Въздушни възглавници; </span>
-                        <span *ngIf="document.isofix">Система ISOFIX; </span>
-                        <span *ngIf="document.esp">Електронна програма за стабилизиране; </span>
-                        <span *ngIf="document.doors2">2(3) Врати; </span>
-                        <span *ngIf="document.doors4">4(5) Врати; </span>
-                        <span *ngIf="document.ledLights">LED фарове; </span>
+                        <span *ngIf="document.airbags">{{'SEARCH.AIRBAGS' | translate}}; </span>
+                        <span *ngIf="document.isofix">ISOFIX; </span>
+                        <span *ngIf="document.esp">{{'SEARCH.ESP' | translate}}; </span>
+                        <span *ngIf="document.doors2">2(3) {{'SEARCH.DOORS' | translate}}; </span>
+                        <span *ngIf="document.doors4">4(5) {{'SEARCH.DOORS' | translate}}; </span>
+                        <span *ngIf="document.ledLights">LED {{'SEARCH.LIGHTS' | translate}}; </span>
                         <span *ngIf="document.bluetooth">Bluetooth; </span>
                         <span *ngIf="document.dvd">DVD; </span>
-                        <span *ngIf="document.cruiseControl">Система за контрол на
-                            скоростта (автопилот); </span>
+                        <span *ngIf="document.cruiseControl">{{'SEARCH.CRUISE_CONTROL' | translate}}; </span>
                         <span *ngIf="document.awd">4x4; </span>
-                        <span *ngIf="document.disabledPeople">За хора с увреждания; </span>
-                        <span *ngIf="document.centralLock">Централно заключване; </span>
+                        <span *ngIf="document.disabledPeople">{{'SEARCH.PEOPLE_WITH_DISABILITIES' | translate}}; </span>
+                        <span *ngIf="document.centralLock">{{'SEARCH.CENTRAL_LOCK' | translate}}; </span>
                     </p>
                 </div>
             </div>
         </div>
         <div class="myadd-btns-container">
-            <a href="/edit/{{document.id}}">РЕДАКТИРАЙ</a>
-            <p (click)="onDelete($event, document.id)">ИЗТРИЙ</p>
+            <a href="/edit/{{document.id}}">{{'MY_ADDS.EDIT_BTN' | translate}}</a>
+            <p (click)="onDelete($event, document.id)">{{'MY_ADDS.DELETE_BTN' | translate}}</p>
         </div>
     </div>
 </div>
