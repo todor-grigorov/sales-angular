@@ -7,29 +7,28 @@
         <div class="add-info-container">
             <div class="add-name-price">
                 <a href="/details/{{document.id}}" class="add-name">{{document.brand}} {{document.model}}</a>
-                <h3>{{document.price}} лв.</h3>
+                <h3>{{document.price}} {{'MY_ADDS.CURRENCY' | translate}}</h3>
             </div>
             <div class="add-info">
                 <p>
-                    дата на производство - {{document.buildYear}},
+                    {{'MY_ADDS.MANUFACTURER_DATE' | translate}} - {{document.buildYear}},
                 </p>
-                <p>двигател - {{document.engineType}}</p>
-                <p>Скоростна кутия - {{document.gearType}}</p>
-                <h6>Особености:</h6>
+                <p>{{'MY_ADDS.ENGINE' | translate}} - {{document.engineType}}</p>
+                <p>{{'MY_ADDS.TRANSMISSION' | translate}} - {{document.gearType}}</p>
+                <h6>{{'MY_ADDS.PROPERTIES' | translate}}:</h6>
                 <p>
-                    <span *ngIf="document.airbags">Въздушни възглавници; </span>
-                    <span *ngIf="document.isofix">Система ISOFIX; </span>
-                    <span *ngIf="document.esp">Електронна програма за стабилизиране; </span>
-                    <span *ngIf="document.doors2">2(3) Врати; </span>
-                    <span *ngIf="document.doors4">4(5) Врати; </span>
-                    <span *ngIf="document.ledLights">LED фарове; </span>
+                    <span *ngIf="document.airbags">{{'SEARCH.AIRBAGS' | translate}}; </span>
+                    <span *ngIf="document.isofix">ISOFIX; </span>
+                    <span *ngIf="document.esp">{{'SEARCH.ESP' | translate}}; </span>
+                    <span *ngIf="document.doors2">2(3) {{'SEARCH.DOORS' | translate}}; </span>
+                    <span *ngIf="document.doors4">4(5) {{'SEARCH.DOORS' | translate}}; </span>
+                    <span *ngIf="document.ledLights">LED {{'SEARCH.LIGHTS' | translate}}; </span>
                     <span *ngIf="document.bluetooth">Bluetooth; </span>
                     <span *ngIf="document.dvd">DVD; </span>
-                    <span *ngIf="document.cruiseControl">Система за контрол на
-                        скоростта (автопилот); </span>
+                    <span *ngIf="document.cruiseControl">{{'SEARCH.CRUISE_CONTROL' | translate}}; </span>
                     <span *ngIf="document.awd">4x4; </span>
-                    <span *ngIf="document.disabledPeople">За хора с увреждания; </span>
-                    <span *ngIf="document.centralLock">Централно заключване; </span>
+                    <span *ngIf="document.disabledPeople">{{'SEARCH.PEOPLE_WITH_DISABILITIES' | translate}}; </span>
+                    <span *ngIf="document.centralLock">{{'SEARCH.CENTRAL_LOCK' | translate}}; </span>
                 </p>
             </div>
         </div>

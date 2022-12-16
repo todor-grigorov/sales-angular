@@ -7,7 +7,7 @@
     "NAVBAR": {
         "SEARCH_BTN": "Search",
         "MY_ADDS_BTN": "My Adds",
-        "CREATE_ADD_BTN": "+ Add add"
+        "CREATE_ADD_BTN": "+ New add"
     },
     "TABS": {
         "HOME": "Home",
