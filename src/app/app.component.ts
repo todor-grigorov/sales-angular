@@ -27,11 +27,15 @@ export class AppComponent {
 
   constructor(private router: Router, public authService: AuthService, public translate: TranslateService) {
     this.isLoggedIn = this.loggedIn();
+    this.translate = translate;
 
     // Register translation languages
-    translate.addLangs(['en', 'bg']);
+    this.translate.addLangs(['en', 'bg']);
     // Set default language
-    translate.setDefaultLang('en');
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+    console.log(this.translate.currentLang);
+
   }
 
   translateLanguageTo(lang: string) {
