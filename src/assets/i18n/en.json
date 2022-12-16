@@ -18,7 +18,7 @@
         "MANUFACTURER_DATE": "manufacture date",
         "ENGINE": "engine",
         "TRANSMISSION": "transmission",
-        "CURRENCY": "lv."
+        "CURRENCY": "BGN"
     },
     "REGISTER": {
         "TITLE": "Register",
@@ -113,7 +113,7 @@
         "NO_ADDS": "No Adds",
         "EDIT_BTN": "EDIT",
         "DELETE_BTN": "DELETE",
-        "CURRENCY": "lv.",
+        "CURRENCY": "BGN",
         "MANUFACTURER_DATE": "manufacture date",
         "ENGINE": "engine",
         "TRANSMISSION": "Transmission",

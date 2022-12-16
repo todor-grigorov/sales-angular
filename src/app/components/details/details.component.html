@@ -2,56 +2,54 @@
     <app-gallery [images]="images"></app-gallery>
     <div class="add-name-price">
         <h3 class="add-name">{{document.brand}} {{document.model}}</h3>
-        <h3><span class="add-price-text">Цена: </span><span class="add-price">{{document.price}} лв.</span></h3>
+        <h3><span class="add-price-text">{{'CREATE.PRICE' | translate}}: </span><span class="add-price">{{document.price}} {{'MY_ADDS.CURRENCY' | translate}}</span></h3>
     </div>
 
     <pre></pre>
     <div class="main-car-specs">
-        <p><b>Дата на производство</b>: {{document.buildYear}}</p>
-        <p><b>Тип двигател</b>: {{document.engineType}}</p>
-        <p><b>Скоростна кутия</b>: {{document.gearType}}</p>
+        <p><b>{{'CREATE.MAKE_YEAR' | translate}}</b>: {{document.buildYear}}</p>
+        <p><b>{{'CREATE.ENGINE_TYPE' | translate}}</b>: {{document.engineType}}</p>
+        <p><b>{{'CREATE.TRANSMISSION' | translate}}</b>: {{document.gearType}}</p>
     </div>
 
     <pre></pre>
     <div class="other-car-specs">
         <div class="other-car-specs__column">
             <div class="other-car-specs__row">
-                <h4><b>Безопасност:</b></h4>
+                <h4><b>{{'CREATE.SAFETY' | translate}}:</b></h4>
                 <ul>
-                    <li *ngIf="document.airbags">Въздушни възглавници</li>
-                    <li *ngIf="document.isofix">Система ISOFIX</li>
-                    <li *ngIf="document.esp">Електронна програма за стабилизиране</li>
+                    <li *ngIf="document.airbags">{{'CREATE.AIRBAGS' | translate}}</li>
+                    <li *ngIf="document.isofix">ISOFIX</li>
+                    <li *ngIf="document.esp">{{'CREATE.ESP' | translate}}</li>
                 </ul>
             </div>
 
             <div class="other-car-specs__row">
-                <h4><b>Екстериор:</b></h4>
+                <h4><b>{{'CREATE.EXTERIOR' | translate}}:</b></h4>
                 <ul>
-                    <li *ngIf="document.doors2">2(3) Врати</li>
-                    <li *ngIf="document.doors4">4(5) Врати</li>
-                    <li *ngIf="document.ledLights">LED фарове</li>
+                    <li *ngIf="document.doors2">2(3) {{'CREATE.DOORS' | translate}}</li>
+                    <li *ngIf="document.doors4">4(5) {{'CREATE.DOORS' | translate}}</li>
+                    <li *ngIf="document.ledLights">LED {{'CREATE.LIGHTS' | translate}}</li>
                 </ul>
             </div>
         </div>
 
         <div class="other-car-specs__column">
             <div class="other-car-specs__row">
-                <h4><b>Комфорт:</b></h4>
+                <h4><b>{{'CREATE.COMFORT' | translate}}:</b></h4>
                 <ul>
                     <li *ngIf="document.bluetooth">Bluetooth</li>
                     <li *ngIf="document.dvd">DVD</li>
-                    <li *ngIf="document.cruiseControl">Система за контрол на
-                        скоростта
-                        (автопилот)</li>
+                    <li *ngIf="document.cruiseControl">{{'CREATE.CRUISE_CONTROL' | translate}}</li>
                 </ul>
             </div>
 
             <div class="other-car-specs__row">
-                <h4><b>Други:</b></h4>
+                <h4><b>{{'CREATE.OTHERS' | translate}}:</b></h4>
                 <ul>
                     <li *ngIf="document.awd">4x4</li>
-                    <li *ngIf="document.disabledPeople">За хора с увреждания</li>
-                    <li *ngIf="document.centralLock">Централно заключване</li>
+                    <li *ngIf="document.disabledPeople">{{'CREATE.PEOPLE_WITH_DISABILITIES' | translate}}</li>
+                    <li *ngIf="document.centralLock">{{'CREATE.CENTRAL_LOCK' | translate}}</li>
                 </ul>
             </div>
         </div>
