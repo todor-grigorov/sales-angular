@@ -4,7 +4,7 @@
         <button mat-raised-button class="add-btn attach" (click)="handlePhotoClick()">Прикачи снимки</button>
     </div> -->
     <div class="upload-file-container">
-        <label for="upload-file">Прикачи снимка</label>
+        <label for="upload-file">{{'CREATE.ATTACH_IMAGE' | translate}}</label>
         <input id="upload-file" #uploadFile (change)="uploadImages($event)" type="file"
             accept=".png, .bmp, .jpg, .jpeg, .gif" />
     </div>
@@ -13,10 +13,10 @@
             <div class="selects__column">
                 <div class="selects__row">
                     <mat-form-field class="mat-form-fields" appearance="fill">
-                        <mat-label>Марка</mat-label>
+                        <mat-label>{{'CREATE.BRAND' | translate}}</mat-label>
                         <mat-select matNativeControl [formControl]="brandFormControl"
                             (selectionChange)="onBrandSelection($event)" id="brandSelectId" name="brand" ngModel>
-                            <mat-option selected value="">Избери
+                            <mat-option selected value="">{{'CREATE.CHOOSE' | translate}}
                             </mat-option>
                             <mat-option value="Audi">Audi
                             </mat-option>
@@ -28,10 +28,10 @@
                     </mat-form-field>
 
                     <mat-form-field class="mat-form-fields" appearance="fill">
-                        <mat-label> Модел</mat-label>
+                        <mat-label>{{'CREATE.MODEL' | translate}}</mat-label>
                         <mat-select matNativeControl [formControl]="modelFormControl" id="brandSelectId" name="model"
                             ngModel>
-                            <mat-option selected value="">Избери
+                            <mat-option selected value="">{{'CREATE.CHOOSE' | translate}}
                             </mat-option>
                             <mat-option *ngFor="let model of models" value="{{model}}">{{model}}
                             </mat-option>
@@ -41,199 +41,199 @@
 
                 <div class="selects__row">
                     <mat-form-field class="mat-form-fields" appearance="fill">
-                        <mat-label>Цена</mat-label>
+                        <mat-label>{{'CREATE.PRICE' | translate}}</mat-label>
                         <input matInput placeholder="1000" [formControl]="priceFormControl" name="price" ngModel>
                     </mat-form-field>
 
                     <mat-form-field class="mat-form-fields" appearance="fill">
-                        <mat-label>Година на производство</mat-label>
+                        <mat-label>{{'CREATE.MAKE_YEAR' | translate}}</mat-label>
                         <mat-select matNativeControl [formControl]="buildYearFormControl" id="buildYear"
                             name="buildYear" ngModel>
                             <mat-option value="">
                             </mat-option>
-                            <mat-option value="2021">2021 г.
+                            <mat-option value="2021">2021 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2020">2020 г.
+                            <mat-option value="2020">2020 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2019">2019 г.
+                            <mat-option value="2019">2019 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2018">2018 г.
+                            <mat-option value="2018">2018 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2017">2017 г.
+                            <mat-option value="2017">2017 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2016">2016 г.
+                            <mat-option value="2016">2016 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2015">2015 г.
+                            <mat-option value="2015">2015 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2014">2014 г.
+                            <mat-option value="2014">2014 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2013">2013 г.
+                            <mat-option value="2013">2013 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2012">2012 г.
+                            <mat-option value="2012">2012 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2011">2011 г.
+                            <mat-option value="2011">2011 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2010">2010 г.
+                            <mat-option value="2010">2010 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2009">2009 г.
+                            <mat-option value="2009">2009 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2008">2008 г.
+                            <mat-option value="2008">2008 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2007">2007 г.
+                            <mat-option value="2007">2007 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2006">2006 г.
+                            <mat-option value="2006">2006 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2005">2005 г.
+                            <mat-option value="2005">2005 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2004">2004 г.
+                            <mat-option value="2004">2004 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2003">2003 г.
+                            <mat-option value="2003">2003 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2002">2002 г.
+                            <mat-option value="2002">2002 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2001">2001 г.
+                            <mat-option value="2001">2001 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="2000">2000 г.
+                            <mat-option value="2000">2000 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1999">1999 г.
+                            <mat-option value="1999">1999 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1998">1998 г.
+                            <mat-option value="1998">1998 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1997">1997 г.
+                            <mat-option value="1997">1997 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1996">1996 г.
+                            <mat-option value="1996">1996 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1995">1995 г.
+                            <mat-option value="1995">1995 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1994">1994 г.
+                            <mat-option value="1994">1994 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1993">1993 г.
+                            <mat-option value="1993">1993 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1992">1992 г.
+                            <mat-option value="1992">1992 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1991">1991 г.
+                            <mat-option value="1991">1991 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1990">1990 г.
+                            <mat-option value="1990">1990 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1989">1989 г.
+                            <mat-option value="1989">1989 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1988">1988 г.
+                            <mat-option value="1988">1988 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1987">1987 г.
+                            <mat-option value="1987">1987 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1986">1986 г.
+                            <mat-option value="1986">1986 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1985">1985 г.
+                            <mat-option value="1985">1985 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1984">1984 г.
+                            <mat-option value="1984">1984 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1983">1983 г.
+                            <mat-option value="1983">1983 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1982">1982 г.
+                            <mat-option value="1982">1982 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1981">1981 г.
+                            <mat-option value="1981">1981 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1980">1980 г.
+                            <mat-option value="1980">1980 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1979">1979 г.
+                            <mat-option value="1979">1979 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1978">1978 г.
+                            <mat-option value="1978">1978 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1977">1977 г.
+                            <mat-option value="1977">1977 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1976">1976 г.
+                            <mat-option value="1976">1976 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1975">1975 г.
+                            <mat-option value="1975">1975 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1974">1974 г.
+                            <mat-option value="1974">1974 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1973">1973 г.
+                            <mat-option value="1973">1973 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1972">1972 г.
+                            <mat-option value="1972">1972 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1971">1971 г.
+                            <mat-option value="1971">1971 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1970">1970 г.
+                            <mat-option value="1970">1970 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1969">1969 г.
+                            <mat-option value="1969">1969 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1968">1968 г.
+                            <mat-option value="1968">1968 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1967">1967 г.
+                            <mat-option value="1967">1967 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1966">1966 г.
+                            <mat-option value="1966">1966 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1965">1965 г.
+                            <mat-option value="1965">1965 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1964">1964 г.
+                            <mat-option value="1964">1964 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1963">1963 г.
+                            <mat-option value="1963">1963 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1962">1962 г.
+                            <mat-option value="1962">1962 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1961">1961 г.
+                            <mat-option value="1961">1961 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1960">1960 г.
+                            <mat-option value="1960">1960 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1959">1959 г.
+                            <mat-option value="1959">1959 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1958">1958 г.
+                            <mat-option value="1958">1958 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1957">1957 г.
+                            <mat-option value="1957">1957 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1956">1956 г.
+                            <mat-option value="1956">1956 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1955">1955 г.
+                            <mat-option value="1955">1955 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1954">1954 г.
+                            <mat-option value="1954">1954 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1953">1953 г.
+                            <mat-option value="1953">1953 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1952">1952 г.
+                            <mat-option value="1952">1952 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1951">1951 г.
+                            <mat-option value="1951">1951 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1950">1950 г.
+                            <mat-option value="1950">1950 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1949">1949 г.
+                            <mat-option value="1949">1949 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1948">1948 г.
+                            <mat-option value="1948">1948 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1947">1947 г.
+                            <mat-option value="1947">1947 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1946">1946 г.
+                            <mat-option value="1946">1946 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1945">1945 г.
+                            <mat-option value="1945">1945 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1944">1944 г.
+                            <mat-option value="1944">1944 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1943">1943 г.
+                            <mat-option value="1943">1943 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1942">1942 г.
+                            <mat-option value="1942">1942 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1941">1941 г.
+                            <mat-option value="1941">1941 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1940">1940 г.
+                            <mat-option value="1940">1940 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1939">1939 г.
+                            <mat-option value="1939">1939 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1938">1938 г.
+                            <mat-option value="1938">1938 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1937">1937 г.
+                            <mat-option value="1937">1937 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1936">1936 г.
+                            <mat-option value="1936">1936 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1935">1935 г.
+                            <mat-option value="1935">1935 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1934">1934 г.
+                            <mat-option value="1934">1934 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1933">1933 г.
+                            <mat-option value="1933">1933 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1932">1932 г.
+                            <mat-option value="1932">1932 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1931">1931 г.
+                            <mat-option value="1931">1931 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
-                            <mat-option value="1930">1930 г.
+                            <mat-option value="1930">1930 {{'CREATE.YEAR_ABRIVIATION' | translate}}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
@@ -241,33 +241,33 @@
 
                 <div class="selects__row">
                     <mat-form-field class="mat-form-fields" appearance="fill">
-                        <mat-label>Тип двигател</mat-label>
+                        <mat-label>{{'CREATE.ENGINE_TYPE' | translate}}</mat-label>
                         <mat-select matNativeControl [formControl]="engineTypeFormControl" id="engineType"
                             name="engineType" ngModel>
-                            <mat-option value="">всички типове
+                            <mat-option value="">{{'CREATE.ALL_TYPES' | translate}}
                             </mat-option>
-                            <mat-option value="Бензинов">Бензинов
+                            <mat-option value="Бензинов">{{'CREATE.PETROL_ENGINE' | translate}}
                             </mat-option>
-                            <mat-option value="Дизелов">Дизелов
+                            <mat-option value="Дизелов">{{'CREATE.DIESEL_ENGINE' | translate}}
                             </mat-option>
-                            <mat-option value="Електрически">Електрически
+                            <mat-option value="Електрически">{{'CREATE.ELECTRIC_ENGINE' | translate}}
                             </mat-option>
-                            <mat-option value="Хибриден">Хибриден
+                            <mat-option value="Хибриден">{{'CREATE.HYBRID_ENGINE' | translate}}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
 
                     <mat-form-field class="mat-form-fields" appearance="fill">
-                        <mat-label>Скоростна кутия</mat-label>
+                        <mat-label>{{'CREATE.TRANSMISSION' | translate}}</mat-label>
                         <mat-select matNativeControl [formControl]="gearTypeFormControl" id="gearType" name="gearType"
                             ngModel>
-                            <mat-option value="">Без значение
+                            <mat-option value="">{{'CREATE.ALL_TRANSMISSIONS' | translate}}
                             </mat-option>
-                            <mat-option value="Ръчна">Ръчна
+                            <mat-option value="Ръчна">{{'CREATE.MANUAL_TRANSMISSION' | translate}}
                             </mat-option>
-                            <mat-option value="Автоматична">Автоматична
+                            <mat-option value="Автоматична">{{'CREATE.AUTOMATIC_TRANSMISSION' | translate}}
                             </mat-option>
-                            <mat-option value="Полуавтоматична">Полуавтоматична
+                            <mat-option value="Полуавтоматична">{{'CREATE.SEMIAUTOMATIC_TRANSMISSION' | translate}}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
@@ -277,7 +277,7 @@
             <div class="selects__column">
                 <div class="selects__row">
                     <mat-form-field class="mat-form-fields" appearance="fill">
-                        <mat-label>Телефонен номер</mat-label>
+                        <mat-label>{{'CREATE.PHONE_NUMBER' | translate}}</mat-label>
                         <input matInput required [formControl]="phoneNumberFormControl" placeholder="0887 000 000"
                             name="phoneNumber" ngModel>
                     </mat-form-field>
@@ -286,13 +286,13 @@
                 </div>
                 <div class="selects__row">
                     <mat-form-field class="mat-form-fields" appearance="fill">
-                        <mat-label>Адрес</mat-label>
+                        <mat-label>{{'CREATE.ADDRESS' | translate}}</mat-label>
                         <input matInput required placeholder="гр. София, кв. '1', ул. 'Улица', №1"
                             value="document.address" [formControl]="addressFormControl" name="address" ngModel>
                     </mat-form-field>
 
                     <div class="add-btn-container">
-                        <button mat-raised-button class="add-btn" type="submit">Редактирай обява</button>
+                        <button mat-raised-button class="add-btn" type="submit">{{'EDIT.EDIT_BTN' | translate}}</button>
                     </div>
                 </div>
             </div>
@@ -303,15 +303,15 @@
             <div class="checkboxes__column">
                 <div class="checkboxes__row">
                     <section class="" [formGroup]="safety">
-                        <h4><b>Безопасност:</b></h4>
+                        <h4><b>{{'CREATE.SAFETY' | translate}}:</b></h4>
                         <p>
-                            <mat-checkbox color="primary" formControlName="airbags"> Въздушни възглавници</mat-checkbox>
+                            <mat-checkbox color="primary" formControlName="airbags">{{'CREATE.AIRBAGS' | translate}}</mat-checkbox>
                         </p>
                         <p>
-                            <mat-checkbox color="primary" formControlName="isofix">Система ISOFIX</mat-checkbox>
+                            <mat-checkbox color="primary" formControlName="isofix">ISOFIX</mat-checkbox>
                         </p>
                         <p>
-                            <mat-checkbox color="primary" formControlName="esp">Електронна програма за стабилизиране
+                            <mat-checkbox color="primary" formControlName="esp">{{'CREATE.ESP' | translate}}
                             </mat-checkbox>
                         </p>
                     </section>
@@ -319,15 +319,15 @@
 
                 <div class="checkboxes__row">
                     <section class="" [formGroup]="exterior">
-                        <h4><b>Екстериор:</b></h4>
+                        <h4><b>{{'CREATE.EXTERIOR' | translate}}:</b></h4>
                         <p>
-                            <mat-checkbox color="primary" formControlName="doors2">2(3) Врати</mat-checkbox>
+                            <mat-checkbox color="primary" formControlName="doors2">2(3) {{'CREATE.DOORS' | translate}}</mat-checkbox>
                         </p>
                         <p>
-                            <mat-checkbox color="primary" formControlName="doors4">4(5) Врати</mat-checkbox>
+                            <mat-checkbox color="primary" formControlName="doors4">4(5) {{'CREATE.DOORS' | translate}}</mat-checkbox>
                         </p>
                         <p>
-                            <mat-checkbox color="primary" formControlName="ledLights">LED фарове</mat-checkbox>
+                            <mat-checkbox color="primary" formControlName="ledLights">LED {{'CREATE.LIGHTS' | translate}}</mat-checkbox>
                         </p>
                     </section>
                 </div>
@@ -336,7 +336,7 @@
             <div class="checkboxes__column">
                 <div class="checkboxes__row">
                     <section class="checkboxes__column" [formGroup]="comfort">
-                        <h4><b>Комфорт:</b></h4>
+                        <h4><b>{{'CREATE.COMFORT' | translate}}:</b></h4>
                         <p>
                             <mat-checkbox color="primary" formControlName="bluetooth">Bluetooth</mat-checkbox>
                         </p>
@@ -344,26 +344,22 @@
                             <mat-checkbox color="primary" formControlName="dvd">DVD</mat-checkbox>
                         </p>
                         <p>
-                            <mat-checkbox color="primary" formControlName="cruiseControl">Система за контрол на
-                                скоростта
-                                (автопилот)</mat-checkbox>
+                            <mat-checkbox color="primary" formControlName="cruiseControl">{{'CREATE.CRUISE_CONTROL' | translate}}</mat-checkbox>
                         </p>
                     </section>
                 </div>
 
                 <div class="checkboxes__row">
                     <section class="checkboxes__column" [formGroup]="other">
-                        <h4><b>Други:</b></h4>
+                        <h4><b>{{'CREATE.OTHERS' | translate}}:</b></h4>
                         <p>
                             <mat-checkbox color="primary" formControlName="awd">4x4</mat-checkbox>
                         </p>
                         <p>
-                            <mat-checkbox color="primary" formControlName="disabledPeople">За хора с увреждания
-                            </mat-checkbox>
+                            <mat-checkbox color="primary" formControlName="disabledPeople">{{'CREATE.PEOPLE_WITH_DISABILITIES' | translate}}</mat-checkbox>
                         </p>
                         <p>
-                            <mat-checkbox color="primary" formControlName="centralLock">Централно заключване
-                            </mat-checkbox>
+                            <mat-checkbox color="primary" formControlName="centralLock">{{'CREATE.CENTRAL_LOCK' | translate}}</mat-checkbox>
                         </p>
                     </section>
                 </div>

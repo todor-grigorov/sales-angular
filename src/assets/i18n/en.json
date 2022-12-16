@@ -118,5 +118,8 @@
         "ENGINE": "engine",
         "TRANSMISSION": "Transmission",
         "PROPERTIES": "Properties"
+    },
+    "EDIT": {
+        "EDIT_BTN": "Edit Add"
     }
 }
