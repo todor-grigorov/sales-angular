@@ -5,8 +5,7 @@ main {
 }
 
 .main-toolbar {
-    margin-top: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 0.8rem;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
@@ -77,6 +76,25 @@ main {
     color: #fff;
     font-weight: 700;
     letter-spacing: 1px;
+}
+
+.languages-bar {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.languages-bar a {
+    margin-right: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #58a2eb;
+    /* color: #1a7cdd; */
 }
 
 @media screen and (max-width: 850px) {

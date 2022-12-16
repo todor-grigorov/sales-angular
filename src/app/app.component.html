@@ -1,4 +1,8 @@
 <main>
+    <div class="languages-bar">
+        <a (click)="translateLanguageTo('en')">English</a>
+        <a (click)="translateLanguageTo('bg')">Български</a>
+    </div>
     <mat-toolbar class="main-toolbar">
         <div class="main-toolbar__left-side">
             <a href="/" class="logo">
@@ -7,23 +11,24 @@
             </a>
             <div class="auth">
                 <span class="signin-signout">
-                    <a *ngIf="!isLoggedIn" href="/signin">Вход</a>
-                    <a *ngIf="isLoggedIn" (click)="onSignOut()">Изход</a>
+                    <a *ngIf="!isLoggedIn" href="/signin">{{'AUTH.SIGNIN' | translate}}</a>
+                    <a *ngIf="isLoggedIn" (click)="onSignOut()">{{'AUTH.SIGNOUT' | translate}}</a>
                 </span>
                 <span>|</span>
                 <span>
-                    <a *ngIf="!isLoggedIn" href="/register">Регистрация</a>
+                    <a *ngIf="!isLoggedIn" href="/register">{{'AUTH.REGISTER' | translate}}</a>
                 </span>
 
                 <span *ngIf="displayName">
                     <a href="/profile">{{displayName}}</a>
                 </span>
+                
             </div>
         </div>
         <div class="main-toolbar__right-side">
-            <a href="/search"><button mat-stroked-button class="edit-ad-toolbar-btn">Търсене</button></a>
-            <a href="/myadds"><button mat-stroked-button class="edit-ad-toolbar-btn">Моите обяви</button></a>
-            <a href="/create"><button mat-raised-button class="add-ad-toolbar-btn">+ ДОБАВИ ОБЯВА</button></a>
+            <a href="/search"><button mat-stroked-button class="edit-ad-toolbar-btn">{{'NAVBAR.SEARCH_BTN' | translate}}</button></a>
+            <a href="/myadds"><button mat-stroked-button class="edit-ad-toolbar-btn">{{'NAVBAR.MY_ADDS_BTN' | translate}}</button></a>
+            <a href="/create"><button mat-raised-button class="add-ad-toolbar-btn">{{'NAVBAR.CREATE_ADD_BTN' | translate}}</button></a>
         </div>
     </mat-toolbar>
     <router-outlet></router-outlet>

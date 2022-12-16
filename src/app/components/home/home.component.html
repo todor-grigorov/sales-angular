@@ -1,5 +1,6 @@
 <div class="home-container">
-    <h1>AUTO DEALER - Намери своя автомобил</h1>
+    <!-- <h1>AUTO DEALER - Намери своя автомобил</h1> -->
+    <h1>{{'HOME.TITLE' | translate}}</h1>
     <div class="home-image-container">
         <img src="assets/images/home.jpg" alt="">
     </div>
@@ -17,10 +18,10 @@
                 </div>
                 <div class="add-info">
                     <p>
-                        дата на производство - {{document.buildYear}},
+                        {{'HOME.MANUFACTURER_DATE' | translate}} - {{document.buildYear}},
                     </p>
-                    <p>двигател - {{document.engineType}}</p>
-                    <p>Скоростна кутия - {{document.gearType}}</p>
+                    <p>{{'HOME.ENGINE' | translate}} - {{document.engineType}}</p>
+                    <p>{{'HOME.TRANSMISSION' | translate}} - {{document.gearType}}</p>
                 </div>
             </div>
         </div>

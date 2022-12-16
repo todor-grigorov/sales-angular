@@ -3,10 +3,10 @@
         <div class="selects__column">
             <div class="selects__row">
                 <mat-form-field class="mat-form-fields" appearance="fill">
-                    <mat-label>Марка</mat-label>
+                    <mat-label>{{'SEARCH.BRAND' | translate}}</mat-label>
                     <mat-select matNativeControl [formControl]="brandFormControl"
                         (selectionChange)="onBrandSelection($event)" id="brandSelectId" name="brand" ngDefaultControl>
-                        <mat-option selected value="">Избери
+                        <mat-option selected value="">{{'SEARCH.CHOOSE' | translate}}
                         </mat-option>
                         <mat-option value="Audi">Audi
                         </mat-option>
@@ -18,10 +18,10 @@
                 </mat-form-field>
 
                 <mat-form-field class="mat-form-fields" appearance="fill">
-                    <mat-label> Модел</mat-label>
+                    <mat-label>{{'SEARCH.MODEL' | translate}}</mat-label>
                     <mat-select matNativeControl id="modelSelectId" [formControl]="modelFormControl" name="model"
                         ngDefaultControl>
-                        <mat-option selected value="">Избери
+                        <mat-option selected value="">{{'SEARCH.CHOOSE' | translate}}
                         </mat-option>
                         <mat-option *ngFor="let model of models" value="{{model}}">{{model}}
                         </mat-option>
@@ -31,13 +31,13 @@
 
             <div class="selects__row">
                 <mat-form-field class="mat-form-fields" appearance="fill">
-                    <mat-label>Цена - от (лв.)</mat-label>
+                    <mat-label>{{'SEARCH.PREICE_FROM' | translate}}</mat-label>
                     <input matInput [formControl]="priceFromFormControl" placeholder="1000" name="priceFrom"
                         ngDefaultControl>
                 </mat-form-field>
 
                 <mat-form-field class="mat-form-fields" appearance="fill">
-                    <mat-label>Цена - до (лв.)</mat-label>
+                    <mat-label>{{'SEARCH.PREICE_TO' | translate}}</mat-label>
                     <input matInput [formControl]="priceToFormControl" placeholder="50000" name="priceTo"
                         ngDefaultControl>
                 </mat-form-field>
@@ -45,33 +45,33 @@
 
             <div class="selects__row">
                 <mat-form-field class="mat-form-fields" appearance="fill">
-                    <mat-label>Тип двигател</mat-label>
+                    <mat-label>{{'SEARCH.ENGINE_TYPE' | translate}}</mat-label>
                     <mat-select matNativeControl [formControl]="engineTypeFormControl" id="engineType" name="engineType"
                         ngDefaultControl>
-                        <mat-option value="">всички типове
+                        <mat-option value="">{{'SEARCH.ALL_TYPES' | translate}}
                         </mat-option>
-                        <mat-option value="Бензинов">Бензинов
+                        <mat-option value="Бензинов">{{'SEARCH.PETROL_ENGINE' | translate}}
                         </mat-option>
-                        <mat-option value="Дизелов">Дизелов
+                        <mat-option value="Дизелов">{{'SEARCH.DIESEL_ENGINE' | translate}}
                         </mat-option>
-                        <mat-option value="Електрически">Електрически
+                        <mat-option value="Електрически">{{'SEARCH.ELECTRIC_ENGINE' | translate}}
                         </mat-option>
-                        <mat-option value="Хибриден">Хибриден
+                        <mat-option value="Хибриден">{{'SEARCH.HYBRID_ENGINE' | translate}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
 
                 <mat-form-field class="mat-form-fields" appearance="fill">
-                    <mat-label>Скоростна кутия</mat-label>
+                    <mat-label>{{'SEARCH.TRANSMISSION' | translate}}</mat-label>
                     <mat-select matNativeControl [formControl]="gearTypeFormControl" id="gearType" name="gearType"
                         ngDefaultControl>
-                        <mat-option value="">Без значение
+                        <mat-option value="">{{'SEARCH.ALL_TRANSMISSIONS' | translate}}
                         </mat-option>
-                        <mat-option value="Ръчна">Ръчна
+                        <mat-option value="Ръчна">{{'SEARCH.MANUAL_TRANSMISSION' | translate}}
                         </mat-option>
-                        <mat-option value="Автоматична">Автоматична
+                        <mat-option value="Автоматична">{{'SEARCH.AUTOMATIC_TRANSMISSION' | translate}}
                         </mat-option>
-                        <mat-option value="Полуавтоматична">Полуавтоматична
+                        <mat-option value="Полуавтоматична">{{'SEARCH.SEMIAUTOMATIC_TRANSMISSION' | translate}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -82,387 +82,387 @@
         <div class="selects__column">
             <div class="selects__row">
                 <mat-form-field class="mat-form-fields" appearance="fill">
-                    <mat-label>Година на производство - от</mat-label>
+                    <mat-label>{{'SEARCH.MAKE_YEAR_FROM' | translate}}</mat-label>
                     <mat-select matNativeControl [formControl]="buildYearFromFormControl" id="yearFrom"
                         name="buildYearFrom" ngDefaultControl>
                         <mat-option value="">
                         </mat-option>
-                        <mat-option value="2021">от 2021 г.
+                        <mat-option value="2021">2021 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2020">от 2020 г.
+                        <mat-option value="2020">2020 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2019">от 2019 г.
+                        <mat-option value="2019">2019 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2018">от 2018 г.
+                        <mat-option value="2018">2018 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2017">от 2017 г.
+                        <mat-option value="2017">2017 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2016">от 2016 г.
+                        <mat-option value="2016">2016 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2015">от 2015 г.
+                        <mat-option value="2015">2015 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2014">от 2014 г.
+                        <mat-option value="2014">2014 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2013">от 2013 г.
+                        <mat-option value="2013">2013 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2012">от 2012 г.
+                        <mat-option value="2012">2012 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2011">от 2011 г.
+                        <mat-option value="2011">2011 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2010">от 2010 г.
+                        <mat-option value="2010">2010 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2009">от 2009 г.
+                        <mat-option value="2009">2009 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2008">от 2008 г.
+                        <mat-option value="2008">2008 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2007">от 2007 г.
+                        <mat-option value="2007">2007 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2006">от 2006 г.
+                        <mat-option value="2006">2006 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2005">от 2005 г.
+                        <mat-option value="2005">2005 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2004">от 2004 г.
+                        <mat-option value="2004">2004 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2003">от 2003 г.
+                        <mat-option value="2003">2003 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2002">от 2002 г.
+                        <mat-option value="2002">2002 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2001">от 2001 г.
+                        <mat-option value="2001">2001 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2000">от 2000 г.
+                        <mat-option value="2000">2000 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1999">от 1999 г.
+                        <mat-option value="1999">1999 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1998">от 1998 г.
+                        <mat-option value="1998">1998 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1997">от 1997 г.
+                        <mat-option value="1997">1997 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1996">от 1996 г.
+                        <mat-option value="1996">1996 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1995">от 1995 г.
+                        <mat-option value="1995">1995 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1994">от 1994 г.
+                        <mat-option value="1994">1994 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1993">от 1993 г.
+                        <mat-option value="1993">1993 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1992">от 1992 г.
+                        <mat-option value="1992">1992 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1991">от 1991 г.
+                        <mat-option value="1991">1991 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1990">от 1990 г.
+                        <mat-option value="1990">1990 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1989">от 1989 г.
+                        <mat-option value="1989">1989 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1988">от 1988 г.
+                        <mat-option value="1988">1988 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1987">от 1987 г.
+                        <mat-option value="1987">1987 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1986">от 1986 г.
+                        <mat-option value="1986">1986 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1985">от 1985 г.
+                        <mat-option value="1985">1985 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1984">от 1984 г.
+                        <mat-option value="1984">1984 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1983">от 1983 г.
+                        <mat-option value="1983">1983 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1982">от 1982 г.
+                        <mat-option value="1982">1982 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1981">от 1981 г.
+                        <mat-option value="1981">1981 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1980">от 1980 г.
+                        <mat-option value="1980">1980 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1979">от 1979 г.
+                        <mat-option value="1979">1979 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1978">от 1978 г.
+                        <mat-option value="1978">1978 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1977">от 1977 г.
+                        <mat-option value="1977">1977 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1976">от 1976 г.
+                        <mat-option value="1976">1976 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1975">от 1975 г.
+                        <mat-option value="1975">1975 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1974">от 1974 г.
+                        <mat-option value="1974">1974 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1973">от 1973 г.
+                        <mat-option value="1973">1973 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1972">от 1972 г.
+                        <mat-option value="1972">1972 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1971">от 1971 г.
+                        <mat-option value="1971">1971 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1970">от 1970 г.
+                        <mat-option value="1970">1970 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1969">от 1969 г.
+                        <mat-option value="1969">1969 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1968">от 1968 г.
+                        <mat-option value="1968">1968 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1967">от 1967 г.
+                        <mat-option value="1967">1967 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1966">от 1966 г.
+                        <mat-option value="1966">1966 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1965">от 1965 г.
+                        <mat-option value="1965">1965 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1964">от 1964 г.
+                        <mat-option value="1964">1964 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1963">от 1963 г.
+                        <mat-option value="1963">1963 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1962">от 1962 г.
+                        <mat-option value="1962">1962 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1961">от 1961 г.
+                        <mat-option value="1961">1961 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1960">от 1960 г.
+                        <mat-option value="1960">1960 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1959">от 1959 г.
+                        <mat-option value="1959">1959 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1958">от 1958 г.
+                        <mat-option value="1958">1958 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1957">от 1957 г.
+                        <mat-option value="1957">1957 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1956">от 1956 г.
+                        <mat-option value="1956">1956 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1955">от 1955 г.
+                        <mat-option value="1955">1955 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1954">от 1954 г.
+                        <mat-option value="1954">1954 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1953">от 1953 г.
+                        <mat-option value="1953">1953 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1952">от 1952 г.
+                        <mat-option value="1952">1952 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1951">от 1951 г.
+                        <mat-option value="1951">1951 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1950">от 1950 г.
+                        <mat-option value="1950">1950 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1949">от 1949 г.
+                        <mat-option value="1949">1949 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1948">от 1948 г.
+                        <mat-option value="1948">1948 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1947">от 1947 г.
+                        <mat-option value="1947">1947 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1946">от 1946 г.
+                        <mat-option value="1946">1946 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1945">от 1945 г.
+                        <mat-option value="1945">1945 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1944">от 1944 г.
+                        <mat-option value="1944">1944 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1943">от 1943 г.
+                        <mat-option value="1943">1943 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1942">от 1942 г.
+                        <mat-option value="1942">1942 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1941">от 1941 г.
+                        <mat-option value="1941">1941 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1940">от 1940 г.
+                        <mat-option value="1940">1940 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1939">от 1939 г.
+                        <mat-option value="1939">1939 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1938">от 1938 г.
+                        <mat-option value="1938">1938 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1937">от 1937 г.
+                        <mat-option value="1937">1937 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1936">от 1936 г.
+                        <mat-option value="1936">1936 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1935">от 1935 г.
+                        <mat-option value="1935">1935 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1934">от 1934 г.
+                        <mat-option value="1934">1934 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1933">от 1933 г.
+                        <mat-option value="1933">1933 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1932">от 1932 г.
+                        <mat-option value="1932">1932 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1931">от 1931 г.
+                        <mat-option value="1931">1931 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1930">от 1930 г.
+                        <mat-option value="1930">1930 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
 
                 <mat-form-field class="mat-form-fields" appearance="fill">
-                    <mat-label>Година на производство - до</mat-label>
+                    <mat-label>{{'SEARCH.MAKE_YEAR_TO' | translate}}</mat-label>
                     <mat-select matNativeControl [formControl]="buildYearToFormControl" id="yearTo" name="buildYearTo"
                         ngDefaultControl>
                         <mat-option value="">
                         </mat-option>
-                        <mat-option value="2021">от 2021 г.
+                        <mat-option value="2021">2021 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2020">от 2020 г.
+                        <mat-option value="2020">2020 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2019">от 2019 г.
+                        <mat-option value="2019">2019 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2018">от 2018 г.
+                        <mat-option value="2018">2018 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2017">от 2017 г.
+                        <mat-option value="2017">2017 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2016">от 2016 г.
+                        <mat-option value="2016">2016 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2015">от 2015 г.
+                        <mat-option value="2015">2015 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2014">от 2014 г.
+                        <mat-option value="2014">2014 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2013">от 2013 г.
+                        <mat-option value="2013">2013 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2012">от 2012 г.
+                        <mat-option value="2012">2012 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2011">от 2011 г.
+                        <mat-option value="2011">2011 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2010">от 2010 г.
+                        <mat-option value="2010">2010 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2009">от 2009 г.
+                        <mat-option value="2009">2009 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2008">от 2008 г.
+                        <mat-option value="2008">2008 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2007">от 2007 г.
+                        <mat-option value="2007">2007 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2006">от 2006 г.
+                        <mat-option value="2006">2006 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2005">от 2005 г.
+                        <mat-option value="2005">2005 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2004">от 2004 г.
+                        <mat-option value="2004">2004 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2003">от 2003 г.
+                        <mat-option value="2003">2003 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2002">от 2002 г.
+                        <mat-option value="2002">2002 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2001">от 2001 г.
+                        <mat-option value="2001">2001 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="2000">от 2000 г.
+                        <mat-option value="2000">2000 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1999">от 1999 г.
+                        <mat-option value="1999">1999 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1998">от 1998 г.
+                        <mat-option value="1998">1998 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1997">от 1997 г.
+                        <mat-option value="1997">1997 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1996">от 1996 г.
+                        <mat-option value="1996">1996 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1995">от 1995 г.
+                        <mat-option value="1995">1995 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1994">от 1994 г.
+                        <mat-option value="1994">1994 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1993">от 1993 г.
+                        <mat-option value="1993">1993 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1992">от 1992 г.
+                        <mat-option value="1992">1992 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1991">от 1991 г.
+                        <mat-option value="1991">1991 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1990">от 1990 г.
+                        <mat-option value="1990">1990 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1989">от 1989 г.
+                        <mat-option value="1989">1989 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1988">от 1988 г.
+                        <mat-option value="1988">1988 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1987">от 1987 г.
+                        <mat-option value="1987">1987 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1986">от 1986 г.
+                        <mat-option value="1986">1986 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1985">от 1985 г.
+                        <mat-option value="1985">1985 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1984">от 1984 г.
+                        <mat-option value="1984">1984 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1983">от 1983 г.
+                        <mat-option value="1983">1983 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1982">от 1982 г.
+                        <mat-option value="1982">1982 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1981">от 1981 г.
+                        <mat-option value="1981">1981 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1980">от 1980 г.
+                        <mat-option value="1980">1980 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1979">от 1979 г.
+                        <mat-option value="1979">1979 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1978">от 1978 г.
+                        <mat-option value="1978">1978 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1977">от 1977 г.
+                        <mat-option value="1977">1977 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1976">от 1976 г.
+                        <mat-option value="1976">1976 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1975">от 1975 г.
+                        <mat-option value="1975">1975 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1974">от 1974 г.
+                        <mat-option value="1974">1974 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1973">от 1973 г.
+                        <mat-option value="1973">1973 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1972">от 1972 г.
+                        <mat-option value="1972">1972 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1971">от 1971 г.
+                        <mat-option value="1971">1971 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1970">от 1970 г.
+                        <mat-option value="1970">1970 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1969">от 1969 г.
+                        <mat-option value="1969">1969 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1968">от 1968 г.
+                        <mat-option value="1968">1968 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1967">от 1967 г.
+                        <mat-option value="1967">1967 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1966">от 1966 г.
+                        <mat-option value="1966">1966 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1965">от 1965 г.
+                        <mat-option value="1965">1965 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1964">от 1964 г.
+                        <mat-option value="1964">1964 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1963">от 1963 г.
+                        <mat-option value="1963">1963 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1962">от 1962 г.
+                        <mat-option value="1962">1962 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1961">от 1961 г.
+                        <mat-option value="1961">1961 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1960">от 1960 г.
+                        <mat-option value="1960">1960 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1959">от 1959 г.
+                        <mat-option value="1959">1959 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1958">от 1958 г.
+                        <mat-option value="1958">1958 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1957">от 1957 г.
+                        <mat-option value="1957">1957 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1956">от 1956 г.
+                        <mat-option value="1956">1956 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1955">от 1955 г.
+                        <mat-option value="1955">1955 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1954">от 1954 г.
+                        <mat-option value="1954">1954 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1953">от 1953 г.
+                        <mat-option value="1953">1953 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1952">от 1952 г.
+                        <mat-option value="1952">1952 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1951">от 1951 г.
+                        <mat-option value="1951">1951 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1950">от 1950 г.
+                        <mat-option value="1950">1950 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1949">от 1949 г.
+                        <mat-option value="1949">1949 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1948">от 1948 г.
+                        <mat-option value="1948">1948 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1947">от 1947 г.
+                        <mat-option value="1947">1947 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1946">от 1946 г.
+                        <mat-option value="1946">1946 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1945">от 1945 г.
+                        <mat-option value="1945">1945 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1944">от 1944 г.
+                        <mat-option value="1944">1944 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1943">от 1943 г.
+                        <mat-option value="1943">1943 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1942">от 1942 г.
+                        <mat-option value="1942">1942 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1941">от 1941 г.
+                        <mat-option value="1941">1941 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1940">от 1940 г.
+                        <mat-option value="1940">1940 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1939">от 1939 г.
+                        <mat-option value="1939">1939 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1938">от 1938 г.
+                        <mat-option value="1938">1938 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1937">от 1937 г.
+                        <mat-option value="1937">1937 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1936">от 1936 г.
+                        <mat-option value="1936">1936 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1935">от 1935 г.
+                        <mat-option value="1935">1935 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1934">от 1934 г.
+                        <mat-option value="1934">1934 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1933">от 1933 г.
+                        <mat-option value="1933">1933 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1932">от 1932 г.
+                        <mat-option value="1932">1932 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1931">от 1931 г.
+                        <mat-option value="1931">1931 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
-                        <mat-option value="1930">от 1930 г.
+                        <mat-option value="1930">1930 {{'SEARCH.YEAR_ABRIVIATION' | translate}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -470,7 +470,7 @@
 
             <div class="buttons__row">
                 <div class="add-btn-container">
-                    <button mat-raised-button class="add-btn" type="submit">Търси</button>
+                    <button mat-raised-button class="add-btn" type="submit">{{'SEARCH.SEARCH' | translate}}</button>
                 </div>
             </div>
         </div>
@@ -481,15 +481,15 @@
         <div class="checkboxes__column">
             <div class="checkboxes__row">
                 <section class="" [formGroup]="safety">
-                    <h4><b>Безопасност:</b></h4>
+                    <h4><b>{{'SEARCH.SAFETY' | translate}}:</b></h4>
                     <p>
-                        <mat-checkbox color="primary" formControlName="airbags">Въздушни възглавници</mat-checkbox>
+                        <mat-checkbox color="primary" formControlName="airbags">{{'SEARCH.AIRBAGS' | translate}}</mat-checkbox>
                     </p>
                     <p>
-                        <mat-checkbox color="primary" formControlName="isofix">Система ISOFIX</mat-checkbox>
+                        <mat-checkbox color="primary" formControlName="isofix">ISOFIX</mat-checkbox>
                     </p>
                     <p>
-                        <mat-checkbox color="primary" formControlName="esp">Електронна програма за стабилизиране
+                        <mat-checkbox color="primary" formControlName="esp">{{'SEARCH.ESP' | translate}}
                         </mat-checkbox>
                     </p>
                 </section>
@@ -497,15 +497,15 @@
 
             <div class="checkboxes__row">
                 <section class="" [formGroup]="exterior">
-                    <h4><b>Екстериор:</b></h4>
+                    <h4><b>{{'SEARCH.EXTERIOR' | translate}}:</b></h4>
                     <p>
-                        <mat-checkbox color="primary" formControlName="doors2">2(3) Врати</mat-checkbox>
+                        <mat-checkbox color="primary" formControlName="doors2">2(3) {{'SEARCH.DOORS' | translate}}</mat-checkbox>
                     </p>
                     <p>
-                        <mat-checkbox color="primary" formControlName="doors4">4(5) Врати</mat-checkbox>
+                        <mat-checkbox color="primary" formControlName="doors4">4(5) {{'SEARCH.DOORS' | translate}}</mat-checkbox>
                     </p>
                     <p>
-                        <mat-checkbox color="primary" formControlName="ledLights">LED фарове</mat-checkbox>
+                        <mat-checkbox color="primary" formControlName="ledLights">LED {{'SEARCH.LIGHTS' | translate}}</mat-checkbox>
                     </p>
                 </section>
             </div>
@@ -514,7 +514,7 @@
         <div class="checkboxes__column">
             <div class="checkboxes__row">
                 <section class="checkboxes__column" [formGroup]="comfort">
-                    <h4><b>Комфорт:</b></h4>
+                    <h4><b>{{'SEARCH.COMFORT' | translate}}:</b></h4>
                     <p>
                         <mat-checkbox color="primary" formControlName="bluetooth">Bluetooth</mat-checkbox>
                     </p>
@@ -522,24 +522,23 @@
                         <mat-checkbox color="primary" formControlName="dvd">DVD</mat-checkbox>
                     </p>
                     <p>
-                        <mat-checkbox color="primary" formControlName="cruiseControl">Система за контрол на скоростта
-                            (автопилот)</mat-checkbox>
+                        <mat-checkbox color="primary" formControlName="cruiseControl">{{'SEARCH.CRUISE_CONTROL' | translate}}</mat-checkbox>
                     </p>
                 </section>
             </div>
 
             <div class="checkboxes__row">
                 <section class="checkboxes__column" [formGroup]="other">
-                    <h4><b>Други:</b></h4>
+                    <h4><b>{{'SEARCH.OTHERS' | translate}}:</b></h4>
                     <p>
                         <mat-checkbox color="primary" formControlName="awd">4x4</mat-checkbox>
                     </p>
                     <p>
-                        <mat-checkbox color="primary" formControlName="disabledPeople">За хора с увреждания
+                        <mat-checkbox color="primary" formControlName="disabledPeople">{{'SEARCH.PEOPLE_WITH_DISABILITIES' | translate}}
                         </mat-checkbox>
                     </p>
                     <p>
-                        <mat-checkbox color="primary" formControlName="centralLock">Централно заключване</mat-checkbox>
+                        <mat-checkbox color="primary" formControlName="centralLock">{{'SEARCH.CENTRAL_LOCK' | translate}}</mat-checkbox>
                     </p>
                 </section>
             </div>

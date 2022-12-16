@@ -7,8 +7,8 @@
     margin: 20px;
 }
 
-.home-image-container {
-    max-height: 40%;
+.home-image-container img {
+    max-height: 480px;
 }
 
 .home-image-container>img {

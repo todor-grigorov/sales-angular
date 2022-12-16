@@ -10,7 +10,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './components/auth/register/register.component';
-import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ContainerComponent } from './components/container/container.component';
 import { MatInputModule } from '@angular/material/input';
@@ -33,8 +32,15 @@ import { ResultsComponent } from './components/results/results.component';
 import { MyaddsComponent } from './components/myadds/myadds.component';
 import { DetailsComponent } from './components/details/details.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
+// Factory function required during AOT compilation
+export function httpTranslateLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -72,6 +78,14 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     SwiperModule,
     MatCheckboxModule,
     NgxGalleryModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
